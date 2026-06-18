@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Local dev scripts (not needed on GitHub Pages)
+snapshot.js
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Env
+.env
+.env.local

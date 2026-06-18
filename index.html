@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray3417 | 个人主页</title>
+  <meta name="description" content="Ray3417 - 一个治愈系的数字小屋">
+  <!-- 预编译的 Tailwind CSS（GitHub Pages 为静态托管，无法实时构建） -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google Fonts: Cormorant Garamond (display) + Noto Serif SC (中文衬线) + Inter (英文UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Mouse cursor glow（桌面端氛围点缀） -->
+  <div class="cursor-glow hidden md:block" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="nav-glass fixed top-0 left-0 w-full z-50" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true">
+          <path d="M6 12C3.2 12 1 9.8 1 7s2.2-5 5-5c.4 0 .7.1 1.1.2C7.8 1.2 8.3.5 9 .2c1-.5 2.2-.2 3 .5 1.2-1.1 2.8-1.6 4.4-1.3 2.3.4 4 2.4 4 4.8 0 .2 0 .3-.1.5 1.4.6 2.2 2 2 3.5-.2 1.6-1.4 2.8-3 2.8H6z" fill="#8FB996"/>
+        </svg>
+        <span class="font-display text-lg text-textDark tracking-wide">Ray3417</span>
+      </a>
+      <div class="hidden md:flex items-center gap-10 text-sm text-textDark/80">
+        <a href="#about" class="hover:text-deepSky transition-colors duration-300">关于我</a>
+        <a href="#works" class="hover:text-deepSky transition-colors duration-300">作品集</a>
+        <a href="#blog" class="hover:text-deepSky transition-colors duration-300">随笔</a>
+        <a href="#contact" class="hover:text-deepSky transition-colors duration-300">联系</a>
+      </div>
+      <button class="md:hidden text-textDark p-2" id="menuBtn" aria-label="切换菜单">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden hidden bg-cream/95 backdrop-blur-md border-t border-morandi/30" id="mobileMenu">
+      <div class="flex flex-col items-center gap-5 py-6 text-sm text-textDark/80">
+        <a href="#about" class="hover:text-deepSky transition-colors" onclick="closeMenu()">关于我</a>
+        <a href="#works" class="hover:text-deepSky transition-colors" onclick="closeMenu()">作品集</a>
+        <a href="#blog" class="hover:text-deepSky transition-colors" onclick="closeMenu()">随笔</a>
+        <a href="#contact" class="hover:text-deepSky transition-colors" onclick="closeMenu()">联系</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
+    <div class="absolute inset-0">
+      <img src="assets/Image-5.jpeg" alt="" class="w-full h-full object-cover object-center" loading="eager" aria-hidden="true">
+    </div>
+
+    <!-- SVG Clouds -->
+    <svg class="absolute animate-float-slow" style="top:12%;left:3%;width:260px;height:120px;opacity:.85" viewBox="0 0 260 120" fill="none" aria-hidden="true">
+      <ellipse cx="90" cy="75" rx="80" ry="35" fill="white" opacity=".9"/>
+      <ellipse cx="60" cy="60" rx="50" ry="32" fill="white" opacity=".92"/>
+      <ellipse cx="120" cy="55" rx="55" ry="38" fill="white"/>
+      <ellipse cx="150" cy="65" rx="45" ry="30" fill="white" opacity=".88"/>
+      <ellipse cx="75" cy="48" rx="35" ry="28" fill="white"/>
+      <ellipse cx="110" cy="40" rx="40" ry="30" fill="white"/>
+      <ellipse cx="140" cy="50" rx="30" ry="24" fill="white" opacity=".9"/>
+      <ellipse cx="95" cy="35" rx="25" ry="22" fill="white" opacity=".95"/>
+    </svg>
+    <svg class="absolute animate-float-slower" style="top:8%;right:8%;width:320px;height:140px;opacity:.8" viewBox="0 0 320 140" fill="none" aria-hidden="true">
+      <ellipse cx="160" cy="95" rx="120" ry="40" fill="white" opacity=".88"/>
+      <ellipse cx="120" cy="80" rx="70" ry="42" fill="white" opacity=".9"/>
+      <ellipse cx="200" cy="75" rx="80" ry="45" fill="white"/>
+      <ellipse cx="230" cy="85" rx="60" ry="35" fill="white" opacity=".85"/>
+      <ellipse cx="100" cy="65" rx="50" ry="35" fill="white"/>
+      <ellipse cx="160" cy="55" rx="60" ry="40" fill="white"/>
+      <ellipse cx="210" cy="60" rx="45" ry="32" fill="white" opacity=".92"/>
+      <ellipse cx="140" cy="48" rx="40" ry="30" fill="white"/>
+      <ellipse cx="180" cy="42" rx="35" ry="28" fill="white" opacity=".95"/>
+    </svg>
+    <svg class="absolute animate-float" style="top:28%;left:20%;width:160px;height:80px;opacity:.5" viewBox="0 0 160 80" fill="none" aria-hidden="true">
+      <ellipse cx="80" cy="52" rx="60" ry="24" fill="white" opacity=".85"/>
+      <ellipse cx="60" cy="42" rx="38" ry="22" fill="white"/>
+      <ellipse cx="100" cy="40" rx="42" ry="26" fill="white" opacity=".9"/>
+      <ellipse cx="75" cy="32" rx="28" ry="20" fill="white"/>
+      <ellipse cx="95" cy="35" rx="22" ry="18" fill="white" opacity=".95"/>
+    </svg>
+    <!-- Birds -->
+    <svg class="absolute top-[28%] left-[40%] animate-float-slow opacity-40" width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden="true">
+      <path d="M0 6C4 2 8 0 10 2C12 0 16 2 20 6" stroke="#3D3D3D" stroke-width="1.2"/>
+    </svg>
+    <svg class="absolute top-[22%] right-[30%] animate-float opacity-30" width="16" height="10" viewBox="0 0 20 12" fill="none" aria-hidden="true">
+      <path d="M0 6C4 2 8 0 10 2C12 0 16 2 20 6" stroke="#3D3D3D" stroke-width="1.2"/>
+    </svg>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto" style="padding-top:80px">
+      <div class="bg-white/40 backdrop-blur-md rounded-3xl px-8 py-14 md:px-20 md:py-20 border border-white/30 shadow-lg">
+        <p class="eyebrow mb-5">Welcome to my world</p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-textDark mb-6 leading-[1.1] font-display">
+          你好，我是 <span class="text-deepSky">Ray3417</span>
+        </h1>
+        <div class="w-16 h-px bg-morandi mx-auto mb-6"></div>
+        <p class="text-lg md:text-xl text-textDark font-serif mb-3 leading-relaxed">用代码编织温暖的数字体验</p>
+        <p class="text-sm text-textDark/70 font-inter tracking-wider mb-10">Frontend Developer &amp; Creative Thinker</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#works" class="btn-glow px-8 py-3 bg-deepSky text-white rounded-full text-sm tracking-wide font-medium">浏览作品</a>
+          <a href="#contact" class="btn-glow px-8 py-3 bg-white/70 text-textDark border border-morandi/40 rounded-full text-sm tracking-wide font-medium">联系我</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom wave with infinite scrolling animation -->
+    <div class="absolute bottom-0 left-0 w-full z-10 overflow-hidden" id="waveContainer">
+      <svg viewBox="0 0 2880 120" fill="none" preserveAspectRatio="none" class="wave-scroll-animation" style="height:80px; width: 2880px;" aria-hidden="true">
+        <!-- 第一层波浪：周期性波形，每1440px重复一次 -->
+        <path d="M0,60 Q180,10 360,60 T720,60 T1080,60 T1440,60 Q1620,10 1800,60 T2160,60 T2520,60 T2880,60 L2880,120 L0,120 Z" fill="#FDF8F0"/>
+        <!-- 第二层波浪：相位偏移，形成层次感 -->
+        <path d="M0,80 Q120,40 240,80 T480,80 T720,80 T960,80 T1200,80 T1440,80 Q1560,40 1680,80 T1920,80 T2160,80 T2400,80 T2640,80 T2880,80 L2880,120 L0,120 Z" fill="#FDF8F0" opacity=".5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 md:py-32 relative bg-cream">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <p class="eyebrow mb-3">About me</p>
+        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display">关于我</h2>
+      </div>
+      <div class="flex flex-col md:flex-row items-start gap-12 md:gap-16">
+        <!-- Avatar -->
+        <div class="reveal flex-shrink-0 mx-auto md:mx-0">
+          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-skyBlue/20 via-softGreen/20 to-morandi/20 flex items-center justify-center shadow-sm overflow-hidden ring-4 ring-white/60">
+            <img src="assets/profile photo.jpg" alt="Ray3417" class="w-full h-full object-cover object-top">
+          </div>
+        </div>
+        <!-- Bio -->
+        <div class="reveal flex-1">
+          <p class="text-textDark font-serif text-base md:text-lg leading-relaxed mb-5">
+            嗨！我是一名热爱创造的前端开发者。相信好的界面不仅仅是功能的载体，更是一种情感的传递。每一行代码都承载着对美好体验的追求，每一个像素都蕴含着对细节的执着。
+          </p>
+          <p class="text-textDark font-serif text-base md:text-lg leading-relaxed mb-8">
+            平日里喜欢探索新的技术，也热爱在代码之外寻找灵感——从自然、艺术和日常生活中汲取养分，让技术与温度共存。
+          </p>
+          <div class="divider-line mb-6"></div>
+          <p class="eyebrow mb-4">Skills &amp; Tools</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">JavaScript</span>
+            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Vue.js</span>
+            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">React</span>
+            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">TypeScript</span>
+            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Node.js</span>
+            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">TailwindCSS</span>
+            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">UI Design</span>
+            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Figma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flower divider -->
+  <div class="flex justify-center py-4 bg-cream" aria-hidden="true">
+    <svg width="220" height="30" viewBox="0 0 220 30" fill="none">
+      <line x1="0" y1="15" x2="80" y2="15" stroke="#D4C5B9" stroke-width=".5"/>
+      <circle cx="95" cy="15" r="3" fill="#F2D7D5"/>
+      <circle cx="110" cy="10" r="2.5" fill="#F2D7D5" opacity=".7"/>
+      <circle cx="110" cy="20" r="2.5" fill="#F2D7D5" opacity=".7"/>
+      <circle cx="125" cy="15" r="3" fill="#F2D7D5"/>
+      <circle cx="110" cy="15" r="2" fill="#C4A882"/>
+      <line x1="140" y1="15" x2="220" y2="15" stroke="#D4C5B9" stroke-width=".5"/>
+    </svg>
+  </div>
+
+  <!-- Portfolio Section — Featured + Grid（打破全对称布局） -->
+  <section id="works" class="py-24 md:py-32 relative bg-creamWarm">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-20">
+        <p class="eyebrow mb-3">Portfolio</p>
+        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display mb-4">作品集</h2>
+        <p class="text-textLight font-serif max-w-xl mx-auto text-sm">精心挑选的项目，每一个都倾注了对细节与体验的思考。</p>
+      </div>
+
+      <!-- Featured Card — 横向大卡，打破 3 列单调节奏 -->
+      <div class="reveal mb-14">
+        <a href="#" class="card-hover group block rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm relative">
+          <span class="featured-badge">✦ FEATURED</span>
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="relative md:h-80 h-64 overflow-hidden work-img-wrapper">
+              <img src="assets/Image-5.jpeg" alt="" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-deepSky/10 to-transparent"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <p class="eyebrow mb-3">Personal · 2025</p>
+              <h3 class="text-2xl md:text-3xl font-display font-medium text-textDark mb-4 leading-tight">个人作品集网站</h3>
+              <p class="text-textLight font-serif leading-relaxed mb-6 text-sm md:text-base">
+                一个以日系治愈风格打造的响应式个人网站，融合插画美学与现代前端技术。从设计系统到动效细节，全程独立完成。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs text-deepSky bg-deepSky/10 px-3 py-1 rounded-full font-medium">HTML</span>
+                <span class="text-xs text-grassGreen bg-grassGreen/10 px-3 py-1 rounded-full font-medium">TailwindCSS</span>
+                <span class="text-xs text-warmBrown bg-warmBrown/10 px-3 py-1 rounded-full font-medium">JavaScript</span>
+              </div>
+              <span class="inline-flex items-center gap-2 text-deepSky text-sm font-medium group-hover:gap-3 transition-all">
+                查看详情
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Regular grid — 5 cards 以不规则网格打破节奏 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Work 2 (占据两列在 md 以上) -->
+        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm md:col-span-2 lg:col-span-1 block">
+          <div class="h-52 overflow-hidden work-img-wrapper relative">
+            <img src="assets/Image-1.jpeg" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">天气可视化面板</h3>
+            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">优雅的天气数据展示应用，以柔和的色彩渐变呈现天气变化之美。</p>
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">Vue.js</span>
+              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">D3.js</span>
+              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">API</span>
+            </div>
+            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              View →
+            </span>
+          </div>
+        </a>
+
+        <!-- Work 3 -->
+        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
+          <div class="h-52 overflow-hidden work-img-wrapper relative">
+            <img src="assets/Image-3.jpeg" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">阅读笔记应用</h3>
+            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">简洁优雅的阅读管理工具，支持笔记标注与灵感收集。</p>
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">React</span>
+              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">Firebase</span>
+              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">PWA</span>
+            </div>
+            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              View →
+            </span>
+          </div>
+        </a>
+
+        <!-- Work 4 -->
+        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
+          <div class="h-52 overflow-hidden work-img-wrapper relative">
+            <img src="assets/Image-2.jpeg" alt="" class="w-full h-full object-cover object-bottom">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">音乐播放器</h3>
+            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">拥有流畅动效的网页音乐播放器，可视化频谱如湖面涟漪般律动。</p>
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">JavaScript</span>
+              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">Web Audio</span>
+              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">Canvas</span>
+            </div>
+            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              View →
+            </span>
+          </div>
+        </a>
+
+        <!-- Work 5 -->
+        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
+          <div class="h-52 overflow-hidden work-img-wrapper relative">
+            <img src="assets/Image-1.jpeg" alt="" class="w-full h-full object-cover object-top">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">配色方案生成器</h3>
+            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">帮助设计师快速生成和谐配色方案的工具，灵感来自自然界的色彩搭配。</p>
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">TypeScript</span>
+              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">React</span>
+              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">Color Theory</span>
+            </div>
+            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              View →
+            </span>
+          </div>
+        </a>
+
+        <!-- Work 6 -->
+        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
+          <div class="h-52 overflow-hidden work-img-wrapper relative">
+            <img src="assets/Image-3.jpeg" alt="" class="w-full h-full object-cover object-center">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">番茄钟计时器</h3>
+            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">专注力管理小工具，以宁静的视觉设计帮助你进入心流状态。</p>
+            <div class="flex gap-2 mb-4">
+              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">Vue.js</span>
+              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">LocalStorage</span>
+              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">CSS</span>
+            </div>
+            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              View →
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section — 左对齐的杂志式排版，与作品集形成节奏对比 -->
+  <section id="blog" class="py-24 md:py-32 relative bg-cream">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="reveal mb-16">
+        <p class="eyebrow mb-3">Writings</p>
+        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display">随笔</h2>
+        <p class="text-textLight font-serif mt-4 text-sm">记录日常的思考与观察。</p>
+      </div>
+
+      <div class="space-y-0 divide-y divide-morandi/20 border-y border-morandi/20">
+        <a href="#" class="reveal group block py-8 md:py-10">
+          <div class="flex items-start justify-between gap-8">
+            <div class="flex-1">
+              <div class="flex items-baseline gap-4 mb-3">
+                <time class="eyebrow">2025.06.12</time>
+                <span class="text-textFaint text-xs">· Thoughts</span>
+              </div>
+              <h3 class="text-xl md:text-2xl font-display font-medium text-textDark mb-3 leading-snug group-hover:text-deepSky transition-colors">
+                关于前端性能优化的一些思考
+              </h3>
+              <p class="text-textLight font-serif leading-relaxed text-sm md:text-base">
+                在构建大型单页应用时，性能优化不仅仅是技术问题，更是一种对用户体验的关怀。从懒加载到代码分割，每一步都在为用户的等待时间争取温柔。
+              </p>
+            </div>
+            <div class="flex-shrink-0 mt-1 text-deepSky opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="reveal group block py-8 md:py-10">
+          <div class="flex items-start justify-between gap-8">
+            <div class="flex-1">
+              <div class="flex items-baseline gap-4 mb-3">
+                <time class="eyebrow">2025.05.20</time>
+                <span class="text-textFaint text-xs">· Design</span>
+              </div>
+              <h3 class="text-xl md:text-2xl font-display font-medium text-textDark mb-3 leading-snug group-hover:text-deepSky transition-colors">
+                从自然中汲取设计灵感
+              </h3>
+              <p class="text-textLight font-serif leading-relaxed text-sm md:text-base">
+                大自然是最好的设计师。树叶的脉络、水面的波纹、云朵的形态，这些看似随意的图案背后，都藏着精妙的秩序与和谐。
+              </p>
+            </div>
+            <div class="flex-shrink-0 mt-1 text-deepSky opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="reveal group block py-8 md:py-10">
+          <div class="flex items-start justify-between gap-8">
+            <div class="flex-1">
+              <div class="flex items-baseline gap-4 mb-3">
+                <time class="eyebrow">2025.04.08</time>
+                <span class="text-textFaint text-xs">· Engineering</span>
+              </div>
+              <h3 class="text-xl md:text-2xl font-display font-medium text-textDark mb-3 leading-snug group-hover:text-deepSky transition-colors">
+                TypeScript 让代码更有温度
+              </h3>
+              <p class="text-textLight font-serif leading-relaxed text-sm md:text-base">
+                类型系统不只是约束，更是一种沟通方式。它让代码之间的对话更清晰，让团队协作更温暖，让维护不再是负担。
+              </p>
+            </div>
+            <div class="flex-shrink-0 mt-1 text-deepSky opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative bg-gradient-to-b from-skyBlue/5 via-cream to-cream py-24 md:py-32">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <p class="eyebrow mb-3">Get in touch</p>
+        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display mb-4">联系我</h2>
+        <p class="text-textLight font-serif text-sm">期待与你的每一次相遇。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+        <!-- Social links — 左 5 栏 -->
+        <div class="reveal md:col-span-5">
+          <div class="flex items-center gap-3 mb-8">
+            <h3 class="eyebrow">Follow me</h3>
+            <div class="flex-1 h-px bg-gradient-to-r from-morandi/40 to-transparent"></div>
+          </div>
+          <div class="space-y-3">
+            <a href="#" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
+              <div class="w-12 h-12 rounded-full bg-deepSky/10 flex items-center justify-center flex-shrink-0 group-hover:bg-deepSky/20 group-hover:scale-110 transition-all duration-300">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5BA3D9" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm text-textDark font-medium group-hover:text-deepSky transition-colors">GitHub</p>
+                  <svg class="w-4 h-4 text-textLight/40 group-hover:text-deepSky group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <p class="text-xs text-textLight font-serif">@Ray3417</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
+              <div class="w-12 h-12 rounded-full bg-grassGreen/10 flex items-center justify-center flex-shrink-0 group-hover:bg-grassGreen/20 group-hover:scale-110 transition-all duration-300">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FB996" stroke-width="1.5" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm text-textDark font-medium group-hover:text-grassGreen transition-colors">微信</p>
+                  <svg class="w-4 h-4 text-textLight/40 group-hover:text-grassGreen group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <p class="text-xs text-textLight font-serif">Ray3417</p>
+              </div>
+            </a>
+            <a href="mailto:hello@ray3417.dev" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
+              <div class="w-12 h-12 rounded-full bg-warmBrown/10 flex items-center justify-center flex-shrink-0 group-hover:bg-warmBrown/20 group-hover:scale-110 transition-all duration-300">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A67C52" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm text-textDark font-medium group-hover:text-warmBrown transition-colors">邮箱</p>
+                  <svg class="w-4 h-4 text-textLight/40 group-hover:text-warmBrown group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <p class="text-xs text-textLight font-serif">hello@ray3417.dev</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 右侧"深夜窗口" — 右 7 栏 -->
+        <div class="reveal md:col-span-7">
+          <div class="relative" style="aspect-ratio: 4/3;">
+            <!-- 沉浸式深色背景 — 不规则边缘的氛围光晕 -->
+            <div class="absolute inset-0 pointer-events-none" style="background:
+              radial-gradient(ellipse 70% 60% at 30% 40%, #2A2A5A 0%, transparent 60%),
+              radial-gradient(ellipse 80% 70% at 70% 60%, #1A1A3A 0%, transparent 65%),
+              radial-gradient(ellipse 100% 80% at 50% 50%, rgba(26,26,58,0.4) 0%, transparent 100%);
+            "></div>
+
+            <!-- 装饰星点 — 散布在画布上 -->
+            <div class="absolute top-[8%] left-[12%] w-1 h-1 rounded-full bg-[#F8E5B0] opacity-70 star-twinkle"></div>
+            <div class="absolute top-[18%] right-[20%] w-1.5 h-1.5 rounded-full bg-[#F8E5B0] opacity-50 star-twinkle" style="animation-delay:0.7s"></div>
+            <div class="absolute top-[30%] left-[6%] w-0.5 h-0.5 rounded-full bg-[#F8E5B0] opacity-60 star-twinkle" style="animation-delay:1.2s"></div>
+            <div class="absolute bottom-[20%] right-[8%] w-1 h-1 rounded-full bg-[#F8E5B0] opacity-80 animate-pulse" style="animation-delay:0.4s"></div>
+            <div class="absolute bottom-[35%] left-[15%] w-0.5 h-0.5 rounded-full bg-[#F8E5B0] opacity-50 star-twinkle" style="animation-delay:1.5s"></div>
+            <div class="absolute top-[45%] right-[15%] w-1 h-1 rounded-full bg-[#F8E5B0] opacity-60 star-twinkle" style="animation-delay:0.9s"></div>
+
+            <!-- 主体图片 — 不加圆角，与氛围融为一体 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="assets/luobu-8e7f83f3-813a-4ed8-a002-18cc7802988a.jpg"
+                   alt="深夜敲代码的小萝卜"
+                   class="relative w-[88%] h-[88%] object-cover"
+                   style="mask-image: radial-gradient(ellipse 75% 80% at center, #000 50%, transparent 95%);
+                          -webkit-mask-image: radial-gradient(ellipse 75% 80% at center, #000 50%, transparent 95%);">
+            </div>
+
+            <!-- 氛围叠加光 — 从图片中心散出的微光 -->
+            <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 55% 55%, rgba(248,229,176,0.06) 0%, transparent 35%);"></div>
+
+            <!-- 顶部"深夜"小标签 -->
+            <div class="absolute top-4 left-6 flex items-center gap-2 text-[10px] tracking-[0.2em] text-[#F8E5B0]/60 font-inter uppercase">
+              <span class="w-1 h-1 rounded-full bg-[#F8E5B0]/60 animate-pulse"></span>
+              late night mode
+            </div>
+
+            <!-- 装饰小月亮（与图片内月亮呼应） -->
+            <div class="absolute top-[8%] right-[8%] w-6 h-6 rounded-full bg-[#F8E5B0]/20 flex items-center justify-center">
+              <div class="w-4 h-4 rounded-full bg-[#F8E5B0]"></div>
+            </div>
+          </div>
+
+          <!-- 状态标签条 — 嵌在画框下方 -->
+          <div class="flex flex-wrap justify-end gap-2 mt-5 px-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/70 rounded-full border border-deepSky/25 text-xs text-textDark">
+              <span class="w-1.5 h-1.5 rounded-full bg-deepSky animate-pulse"></span>
+              正在学习
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/70 rounded-full border border-grassGreen/30 text-xs text-textDark">
+              <span class="w-1.5 h-1.5 rounded-full bg-grassGreen"></span>
+              寻找机会
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/70 rounded-full border border-warmBrown/30 text-xs text-textDark">
+              <span class="w-1.5 h-1.5 rounded-full bg-warmBrown"></span>
+              开放合作
+            </span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative bg-cream overflow-hidden pt-12 pb-8">
+    <div class="absolute bottom-0 left-0 w-full" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" class="w-full" style="height:80px">
+        <path d="M0,60 C60,40 120,70 180,50 C240,30 300,65 360,45 C420,25 480,60 540,40 C600,20 660,55 720,35 C780,15 840,50 900,30 C960,10 1020,45 1080,25 C1140,5 1200,40 1260,20 C1320,0 1380,30 1440,15 L1440,100 L0,100 Z" fill="#8FB996" opacity=".10"/>
+        <path d="M0,75 C100,55 200,85 300,65 C400,45 500,80 600,60 C700,40 800,75 900,55 C1000,35 1100,70 1200,50 C1300,30 1400,60 1440,45 L1440,100 L0,100 Z" fill="#B5D8B0" opacity=".08"/>
+      </svg>
+    </div>
+    <svg class="absolute bottom-8 left-[10%] animate-float-slow hidden md:block" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" fill="#F2D7D5" opacity=".6"/><circle cx="5" cy="8" r="3" fill="#F2D7D5" opacity=".5"/><circle cx="11" cy="8" r="3" fill="#F2D7D5" opacity=".5"/><circle cx="8" cy="8" r="2" fill="#C4A882" opacity=".6"/></svg>
+    <svg class="absolute bottom-12 right-[15%] animate-float hidden md:block" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" fill="#B5D8B0" opacity=".5"/><circle cx="5" cy="8" r="3" fill="#B5D8B0" opacity=".4"/><circle cx="11" cy="8" r="3" fill="#B5D8B0" opacity=".4"/><circle cx="8" cy="8" r="2" fill="#8FB996" opacity=".5"/></svg>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="flex flex-col items-center mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M6 12C3.2 12 1 9.8 1 7s2.2-5 5-5c.4 0 .7.1 1.1.2C7.8 1.2 8.3.5 9 .2c1-.5 2.2-.2 3 .5 1.2-1.1 2.8-1.6 4.4-1.3 2.3.4 4 2.4 4 4.8 0 .2 0 .3-.1.5 1.4.6 2.2 2 2 3.5-.2 1.6-1.4 2.8-3 2.8H6z" fill="#8FB996"/></svg>
+          <span class="font-display text-lg text-textDark">Ray3417</span>
+        </div>
+        <p class="text-sm text-textLight font-serif mb-2">用代码编织温暖的数字体验</p>
+      </div>
+      <div class="divider-line mb-6"></div>
+      <p class="text-center text-xs text-textFaint font-serif">Ray3417 &copy; 2025 &middot; Built with care and a lot of sunshine</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backTop" class="back-top fixed bottom-8 right-8 w-11 h-11 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-morandi/20 flex items-center justify-center z-40 transition-colors" aria-label="回到顶部">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 12V4M4 7L8 3L12 7" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script>
+    // 合并滚动相关监听（单次 scroll handler 胜过多次）
+    const navbar = document.getElementById('navbar');
+    const backTop = document.getElementById('backTop');
+    let ticking = false;
+
+    function onScroll() {
+      const y = window.scrollY;
+      navbar.classList.toggle('scrolled', y > 50);
+      backTop.classList.toggle('show', y > 500);
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Scroll reveal — 阶梯式延迟
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          setTimeout(() => el.classList.add('visible'), (el.dataset.delay || i * 60));
+          revealObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // 移动端菜单
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    function closeMenu() { mobileMenu.classList.add('hidden'); }
+
+    // Cursor glow（桌面端）
+    const glow = document.getElementById('cursorGlow');
+    let glowX = 0, glowY = 0, mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+    function animateGlow() {
+      glowX += (mouseX - glowX) * 0.15;
+      glowY += (mouseY - glowY) * 0.15;
+      glow.style.left = glowX + 'px';
+      glow.style.top = glowY + 'px';
+      requestAnimationFrame(animateGlow);
+    }
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      animateGlow();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "ray3417.github.io",
+  "version": "1.0.0",
+  "description": "Ray3417's personal portfolio website, built with Tailwind CSS and deployed on GitHub Pages.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
+    "build": "npm run build:css",
+    "serve": "node _serve.js",
+    "start": "npm run build:css && node _serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ray3417/Ray3417.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ray3417/Ray3417.github.io/issues"
+  },
+  "homepage": "https://github.com/Ray3417/Ray3417.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "playwright": "^1.61.0"
+  }
+}
