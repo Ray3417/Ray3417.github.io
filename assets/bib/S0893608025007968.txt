@@ -1,0 +1,13 @@
+@article{WANG2025107915,
+title = {Long-range diffusion for weakly camouflaged object segmentation},
+journal = {Neural Networks},
+volume = {192},
+pages = {107915},
+year = {2025},
+issn = {0893-6080},
+doi = {https://doi.org/10.1016/j.neunet.2025.107915},
+url = {https://www.sciencedirect.com/science/article/pii/S0893608025007968},
+author = {Rui Wang and Caijuan Shi and Weixiang Gao and Changyu Duan and Ao Cai and Fei Yu and Yunchao Wei},
+keywords = {Camouflaged object segmentation, Weakly supervised learning, Transformer, Loss function, Long-range diffusion},
+abstract = {Weakly supervised camouflaged object segmentation (WSCOS) aims to segment objects well embedded in surroundings via the supervision of sparse annotations. To compensate for the shortcomings of sparse annotations, existing methods design intricate loss functions with multiple regularization rules, not fully exploring the annotation information itself. Therefore, to address this issue, this paper proposes the long-range diffusion network (LRDNet) to diffuse the sparse annotations for improving WSCOS performance. Specifically, a novel gated local saliency coherence (GLSC) loss is designed to efficiently diffuse limited annotation information across the entire image to supplement the supervision by the unidirectional gating. Meanwhile, a two-stage training is introduced to make GLSC loss further improve the diffusion ability of background annotations and then produce the enhanced squeezing effect for sharp edges. Additionally, for capturing sufficient long-range dependencies, the Trans-decorator and the restoration upsampling (RUp) are designed to communicate global priors with convolutional modules by spatial tokens. Extensive experiments have been conducted and the experimental results demonstrate the effectiveness and the high versatility of our designed LRDNet. The code is available at https://github.com/Ray3417/LRDNet.}
+}

@@ -29,7 +29,6 @@
       <div class="hidden md:flex items-center gap-10 text-sm text-textDark/80">
         <a href="#about" class="hover:text-deepSky transition-colors duration-300">关于我</a>
         <a href="#works" class="hover:text-deepSky transition-colors duration-300">作品集</a>
-        <a href="#blog" class="hover:text-deepSky transition-colors duration-300">随笔</a>
         <a href="#contact" class="hover:text-deepSky transition-colors duration-300">联系</a>
       </div>
       <button class="md:hidden text-textDark p-2" id="menuBtn" aria-label="切换菜单">
@@ -44,7 +43,6 @@
       <div class="flex flex-col items-center gap-5 py-6 text-sm text-textDark/80">
         <a href="#about" class="hover:text-deepSky transition-colors" onclick="closeMenu()">关于我</a>
         <a href="#works" class="hover:text-deepSky transition-colors" onclick="closeMenu()">作品集</a>
-        <a href="#blog" class="hover:text-deepSky transition-colors" onclick="closeMenu()">随笔</a>
         <a href="#contact" class="hover:text-deepSky transition-colors" onclick="closeMenu()">联系</a>
       </div>
     </div>
@@ -101,8 +99,8 @@
           你好，我是 <span class="text-deepSky">Ray3417</span>
         </h1>
         <div class="w-16 h-px bg-morandi mx-auto mb-6"></div>
-        <p class="text-lg md:text-xl text-textDark font-serif mb-3 leading-relaxed">用代码编织温暖的数字体验</p>
-        <p class="text-sm text-textDark/70 font-inter tracking-wider mb-10">Frontend Developer &amp; Creative Thinker</p>
+        <p class="text-lg md:text-xl text-textDark font-serif mb-3 leading-relaxed">网页正在建设中</p>
+        <p class="text-sm text-textDark/70 font-inter tracking-wider mb-10">AI Algorithm Engineer &amp; Developer</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#works" class="btn-glow px-8 py-3 bg-deepSky text-white rounded-full text-sm tracking-wide font-medium">浏览作品</a>
           <a href="#contact" class="btn-glow px-8 py-3 bg-white/70 text-textDark border border-morandi/40 rounded-full text-sm tracking-wide font-medium">联系我</a>
@@ -138,22 +136,22 @@
         <!-- Bio -->
         <div class="reveal flex-1">
           <p class="text-textDark font-serif text-base md:text-lg leading-relaxed mb-5">
-            嗨！我是一名热爱创造的前端开发者。相信好的界面不仅仅是功能的载体，更是一种情感的传递。每一行代码都承载着对美好体验的追求，每一个像素都蕴含着对细节的执着。
+            嗨！我是一名立志成为 AI 算法与开发工程师的学习者。对大语言模型、深度学习与计算机视觉充满兴趣，享受从数据到模型、从训练到部署的完整探索过程。
           </p>
           <p class="text-textDark font-serif text-base md:text-lg leading-relaxed mb-8">
-            平日里喜欢探索新的技术，也热爱在代码之外寻找灵感——从自然、艺术和日常生活中汲取养分，让技术与温度共存。
+            平日里专注于算法原理与工程实践的打磨，也喜欢阅读论文、复现开源项目。相信扎实的数学基础与良好的工程习惯，是让 AI 真正走向应用的两个支点。
           </p>
           <div class="divider-line mb-6"></div>
           <p class="eyebrow mb-4">Skills &amp; Tools</p>
           <div class="flex flex-wrap gap-2">
-            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">JavaScript</span>
-            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Vue.js</span>
-            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">React</span>
-            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">TypeScript</span>
-            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Node.js</span>
-            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">TailwindCSS</span>
-            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">UI Design</span>
-            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Figma</span>
+            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">Python</span>
+            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">PyTorch</span>
+            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">TensorFlow</span>
+            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">Transformers</span>
+            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">NumPy &amp; Pandas</span>
+            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">CUDA</span>
+            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">Linux</span>
+            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Git</span>
           </div>
         </div>
       </div>
@@ -173,216 +171,247 @@
     </svg>
   </div>
 
-  <!-- Portfolio Section — Featured + Grid（打破全对称布局） -->
-  <section id="works" class="py-24 md:py-32 relative bg-creamWarm">
+  <!-- Portfolio — Projects & Publications -->
+  <section id="works" class="py-24 md:py-32 relative works-bg">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="reveal text-center mb-20">
-        <p class="eyebrow mb-3">Portfolio</p>
-        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display mb-4">作品集</h2>
-        <p class="text-textLight font-serif max-w-xl mx-auto text-sm">精心挑选的项目，每一个都倾注了对细节与体验的思考。</p>
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- SECTION HEADER                               -->
+      <!-- ═══════════════════════════════════════════ -->
+      <div class="reveal mb-16 md:mb-20">
+        <h2 class="text-5xl md:text-6xl font-medium text-textDark font-display leading-tight mb-5">Projects &amp; Publications</h2>
+        <p class="text-textLight font-serif text-sm md:text-base leading-relaxed max-w-xl">
+          从算法研究到工程落地的实践。每一项工作都经过亲手复现与验证。
+        </p>
+        <div class="proj-rule mt-8 max-w-xs"></div>
       </div>
 
-      <!-- Featured Card — 横向大卡，打破 3 列单调节奏 -->
-      <div class="reveal mb-14">
-        <a href="#" class="card-hover group block rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm relative">
-          <span class="featured-badge">✦ FEATURED</span>
-          <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="relative md:h-80 h-64 overflow-hidden work-img-wrapper">
-              <img src="assets/Image-5.jpeg" alt="" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-deepSky/10 to-transparent"></div>
-            </div>
-            <div class="p-8 md:p-10 flex flex-col justify-center">
-              <p class="eyebrow mb-3">Personal · 2025</p>
-              <h3 class="text-2xl md:text-3xl font-display font-medium text-textDark mb-4 leading-tight">个人作品集网站</h3>
-              <p class="text-textLight font-serif leading-relaxed mb-6 text-sm md:text-base">
-                一个以日系治愈风格打造的响应式个人网站，融合插画美学与现代前端技术。从设计系统到动效细节，全程独立完成。
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span class="text-xs text-deepSky bg-deepSky/10 px-3 py-1 rounded-full font-medium">HTML</span>
-                <span class="text-xs text-grassGreen bg-grassGreen/10 px-3 py-1 rounded-full font-medium">TailwindCSS</span>
-                <span class="text-xs text-warmBrown bg-warmBrown/10 px-3 py-1 rounded-full font-medium">JavaScript</span>
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- PART I — PROJECTS                           -->
+      <!-- ═══════════════════════════════════════════ -->
+      <div class="reveal mb-20">
+        <div class="flex items-center gap-5 mb-8">
+          <p class="section-eyebrow-line mb-0">Projects &nbsp;/&nbsp; 02</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Project 01 — LLM-Mock-API -->
+          <a href="https://github.com/Ray3417/llm-mock-api" target="_blank" rel="noopener"
+             class="proj-card group block rounded-2xl overflow-hidden">
+            <!-- Top image zone -->
+            <div class="relative h-48 overflow-hidden" style="background: linear-gradient(135deg, #2D2D35 0%, #3A4A5A 50%, #1E2A3A 100%);">
+              <!-- Decorative code pattern -->
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 20px, rgba(255,255,255,0.15) 20px, rgba(255,255,255,0.15) 21px), repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(255,255,255,0.08) 60px, rgba(255,255,255,0.08) 61px);"></div>
+              <!-- Code snippet decoration -->
+              <div class="absolute bottom-4 left-5 right-5 text-left">
+                <div class="flex flex-col gap-1.5">
+                  <div class="flex items-center gap-3"><span style="color:#5BA3D9;font-size:0.7rem;font-family:monospace">01</span><span style="color:rgba(255,255,255,0.5);font-size:0.65rem;font-family:monospace"># Mock LLM APIs for development</span></div>
+                  <div class="flex items-center gap-3"><span style="color:#8FB996;font-size:0.7rem;font-family:monospace">02</span><span style="color:rgba(255,255,255,0.5);font-size:0.65rem;font-family:monospace">const mock = createMock(provider)</span></div>
+                  <div class="flex items-center gap-3"><span style="color:#C8A882;font-size:0.7rem;font-family:monospace">03</span><span style="color:rgba(255,255,255,0.5);font-size:0.65rem;font-family:monospace">await mock.stream(params)</span></div>
+                </div>
               </div>
-              <span class="inline-flex items-center gap-2 text-deepSky text-sm font-medium group-hover:gap-3 transition-all">
-                查看详情
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              </span>
+              <!-- Language icon -->
+              <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span style="color:rgba(255,255,255,0.7);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;">TypeScript</span>
+              </div>
             </div>
+            <!-- Content -->
+            <div class="p-7 md:p-8">
+              <div class="flex items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="text-xl font-display font-medium text-textDark leading-tight mb-1.5 group-hover:text-deepSky transition-colors">LLM-Mock-API</h3>
+                  <p class="proj-meta">AI Engineering &amp; Developer Tools</p>
+                </div>
+                <!-- GitHub link icon -->
+                <div class="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D3D3D" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+              </div>
+              <p class="text-textLight font-serif text-sm leading-relaxed mb-5">
+                为 LLM API 调用提供本地 Mock 服务，支持流式输出与多模型适配器。开发阶段无需真实 API Key，随时切换真实/模拟接口，大幅提升调试效率。
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="proj-spec text-deepSky">Node.js</span>
+                <span class="proj-spec text-grassGreen">TypeScript</span>
+                <span class="proj-spec text-warmBrown">REST / SSE</span>
+                <span class="proj-spec text-deepSky">Vitest</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 02 — Claude Code Clone (Coming Soon) -->
+          <div class="proj-coming-soon rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-72" style="padding: 4rem 2rem;">
+            <!-- Animated coming soon icon -->
+            <div class="mb-6 relative">
+              <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto" style="background: rgba(91, 163, 217, 0.1); border: 1px solid rgba(91, 163, 217, 0.25);">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5BA3D9" stroke-width="1.3" aria-hidden="true">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-display font-medium text-textDark mb-2 leading-tight">仿 Claude Code 项目</h3>
+            <p class="proj-meta text-textLight/60 mb-4">AI Engineering &amp; CLI Tools</p>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full" style="background: rgba(91, 163, 217, 0.08); border: 1px solid rgba(91, 163, 217, 0.2);">
+              <span style="width:6px;height:6px;border-radius:50%;background:#5BA3D9;animation:arrowPulse 1.8s ease-in-out infinite;display:inline-block;"></span>
+              <span style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#5BA3D9;">Coming Soon</span>
+            </div>
+            <div class="proj-rule mt-6 mb-4 w-16 mx-auto"></div>
+            <p class="text-textLight font-serif text-xs leading-relaxed max-w-xs">
+              基于大型语言模型的 AI 编程助手，复刻 Claude Code 的核心交互逻辑与工具调用能力。
+            </p>
           </div>
-        </a>
+
+        </div>
       </div>
 
-      <!-- Regular grid — 5 cards 以不规则网格打破节奏 -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Work 2 (占据两列在 md 以上) -->
-        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm md:col-span-2 lg:col-span-1 block">
-          <div class="h-52 overflow-hidden work-img-wrapper relative">
-            <img src="assets/Image-1.jpeg" alt="" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">天气可视化面板</h3>
-            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">优雅的天气数据展示应用，以柔和的色彩渐变呈现天气变化之美。</p>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">Vue.js</span>
-              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">D3.js</span>
-              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">API</span>
-            </div>
-            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-              View →
-            </span>
-          </div>
-        </a>
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- PART II — PUBLICATIONS                      -->
+      <!-- ═══════════════════════════════════════════ -->
+      <div class="reveal">
+        <div class="flex items-center gap-5 mb-10">
+          <p class="section-eyebrow-line mb-0">Publications &nbsp;/&nbsp; 02 Papers</p>
+        </div>
 
-        <!-- Work 3 -->
-        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
-          <div class="h-52 overflow-hidden work-img-wrapper relative">
-            <img src="assets/Image-3.jpeg" alt="" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">阅读笔记应用</h3>
-            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">简洁优雅的阅读管理工具，支持笔记标注与灵感收集。</p>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">React</span>
-              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">Firebase</span>
-              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">PWA</span>
-            </div>
-            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-              View →
-            </span>
-          </div>
-        </a>
+        <!-- ─────────────────────────────────────────── -->
+        <!-- Paper 01 — CVIU 2024, CCF B                -->
+        <!-- ─────────────────────────────────────────── -->
+        <div class="pub-card block mb-6">
+          <div class="pub-rank-bar pub-rank-ccfb"></div>
+          <div class="grid grid-cols-1 md:grid-cols-12">
 
-        <!-- Work 4 -->
-        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
-          <div class="h-52 overflow-hidden work-img-wrapper relative">
-            <img src="assets/Image-2.jpeg" alt="" class="w-full h-full object-cover object-bottom">
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">音乐播放器</h3>
-            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">拥有流畅动效的网页音乐播放器，可视化频谱如湖面涟漪般律动。</p>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">JavaScript</span>
-              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">Web Audio</span>
-              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">Canvas</span>
+            <!-- Left: metadata + abstract -->
+            <div class="md:col-span-7 pub-content">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="venue-badge venue-badge-ccfb">CCF B · CVIU</span>
+                <span class="proj-meta">2024 &nbsp;·&nbsp; Computer Vision and Image Understanding</span>
+              </div>
+              <h3 class="font-display font-medium text-textDark mb-4 leading-snug">
+                <a href="https://doi.org/10.1016/j.cviu.2024.104061" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                  Camouflaged Object Segmentation with Prior via Two-Stage Training
+                </a>
+              </h3>
+              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mb-4 text-sm font-serif leading-relaxed">
+                <span class="author-me">Rui Wang</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Caijuan Shi</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Changyu Duan</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Weixiang Gao</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Hongli Zhu</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Yunchao Wei</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Meiqin Liu</span>
+              </div>
+              <p class="text-textLight font-serif text-sm leading-relaxed mb-4">
+                提出 Prior-Guided Transformer (PGT)，通过高质量先验生成子网络与两阶段训练方法提升伪装物体分割精度，设计先验引导模块（PGM）建模位置与边界先验的全局/局部依赖关系。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="proj-spec text-warmBrown">COS</span>
+                <span class="proj-spec text-deepSky">Transformer</span>
+                <span class="proj-spec text-grassGreen">Two-Stage</span>
+                <span class="proj-spec text-warmBrown">Prior-Guided</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-5">
+                <a href="https://doi.org/10.1016/j.cviu.2024.104061" target="_blank" rel="noopener" class="pub-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  DOI
+                </a>
+                <a href="https://github.com/Ray3417/PGT" target="_blank" rel="noopener" class="pub-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  Code
+                </a>
+                <span class="proj-meta" style="color: rgba(61, 61, 61, 0.35);">Vol. 246, 104061</span>
+              </div>
             </div>
-            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-              View →
-            </span>
-          </div>
-        </a>
 
-        <!-- Work 5 -->
-        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
-          <div class="h-52 overflow-hidden work-img-wrapper relative">
-            <img src="assets/Image-1.jpeg" alt="" class="w-full h-full object-cover object-top">
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">配色方案生成器</h3>
-            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">帮助设计师快速生成和谐配色方案的工具，灵感来自自然界的色彩搭配。</p>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">TypeScript</span>
-              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">React</span>
-              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">Color Theory</span>
+            <!-- Right: figure slot (放入 pgt.png 即可) -->
+            <div class="md:col-span-5 figure-slot">
+              <img src="assets/figure/pgt.png" alt="PGT figure" class="figure-real" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="figure-fallback" style="display: flex;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-5 4 4M9 9l6 6"/></svg>
+                <span class="figure-fallback-label">PGT · Figure 1</span>
+                <span class="figure-fallback-path">assets/figure/pgt.png</span>
+              </div>
             </div>
-            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-              View →
-            </span>
           </div>
-        </a>
+        </div>
 
-        <!-- Work 6 -->
-        <a href="#" class="reveal card-hover group rounded-2xl overflow-hidden border border-morandi/20 bg-white shadow-sm block">
-          <div class="h-52 overflow-hidden work-img-wrapper relative">
-            <img src="assets/Image-3.jpeg" alt="" class="w-full h-full object-cover object-center">
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-display font-medium text-textDark mb-2 group-hover:text-deepSky transition-colors">番茄钟计时器</h3>
-            <p class="text-sm text-textLight font-serif leading-relaxed mb-4">专注力管理小工具，以宁静的视觉设计帮助你进入心流状态。</p>
-            <div class="flex gap-2 mb-4">
-              <span class="text-xs text-deepSky/80 bg-deepSky/10 px-2 py-1 rounded-full">Vue.js</span>
-              <span class="text-xs text-grassGreen/80 bg-grassGreen/10 px-2 py-1 rounded-full">LocalStorage</span>
-              <span class="text-xs text-warmBrown/80 bg-warmBrown/10 px-2 py-1 rounded-full">CSS</span>
+        <!-- ─────────────────────────────────────────── -->
+        <!-- Paper 02 — Neural Networks 2025, 中科院一区 -->
+        <!-- ─────────────────────────────────────────── -->
+        <div class="pub-card block">
+          <div class="pub-rank-bar pub-rank-1区"></div>
+          <div class="grid grid-cols-1 md:grid-cols-12">
+
+            <!-- Left: figure slot (放入 lrdnet.png 即可) -->
+            <div class="md:col-span-5 figure-slot md:order-1">
+              <img src="assets/figure/lrdnet.png" alt="LRDNet figure" class="figure-real" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="figure-fallback" style="display: flex;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-5 4 4M9 9l6 6"/></svg>
+                <span class="figure-fallback-label">LRDNet · Figure 1</span>
+                <span class="figure-fallback-path">assets/figure/lrdnet.png</span>
+              </div>
             </div>
-            <span class="text-xs text-deepSky font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-              View →
-            </span>
+
+            <!-- Right: metadata + abstract -->
+            <div class="md:col-span-7 pub-content md:order-2">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="venue-badge venue-badge-1区">中科院一区 · Neural Networks</span>
+                <span class="proj-meta">2025 &nbsp;·&nbsp; Elsevier</span>
+              </div>
+              <h3 class="font-display font-medium text-textDark mb-4 leading-snug">
+                <a href="https://doi.org/10.1016/j.neunet.2025.107915" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                  Long-Range Diffusion for Weakly Camouflaged Object Segmentation
+                </a>
+              </h3>
+              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mb-4 text-sm font-serif leading-relaxed">
+                <span class="author-me">Rui Wang</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Caijuan Shi</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Weixiang Gao</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Changyu Duan</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Ao Cai</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Fei Yu</span>
+                <span class="author-other">·</span>
+                <span class="author-other">Yunchao Wei</span>
+              </div>
+              <p class="text-textLight font-serif text-sm leading-relaxed mb-4">
+                提出 Long-Range Diffusion Network (LRDNet)，通过门控局部显著性一致性（GLSC）损失与两阶段训练策略，将稀疏标注信息扩散至全图，同时设计 Trans-Decorator 与 RUp 上采样模块捕获长程依赖。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="proj-spec text-deepSky">WSCOS</span>
+                <span class="proj-spec text-grassGreen">Weakly Supervised</span>
+                <span class="proj-spec text-warmBrown">Long-Range</span>
+                <span class="proj-spec text-deepSky">Transformer</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-5">
+                <a href="https://doi.org/10.1016/j.neunet.2025.107915" target="_blank" rel="noopener" class="pub-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                  DOI
+                </a>
+                <a href="https://github.com/Ray3417/LRDNet" target="_blank" rel="noopener" class="pub-link">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  Code
+                </a>
+                <span class="proj-meta" style="color: rgba(61, 61, 61, 0.35);">Vol. 192, 107915</span>
+              </div>
+            </div>
           </div>
-        </a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Blog Section — 左对齐的杂志式排版，与作品集形成节奏对比 -->
-  <section id="blog" class="py-24 md:py-32 relative bg-cream">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="reveal mb-16">
-        <p class="eyebrow mb-3">Writings</p>
-        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display">随笔</h2>
-        <p class="text-textLight font-serif mt-4 text-sm">记录日常的思考与观察。</p>
-      </div>
-
-      <div class="space-y-0 divide-y divide-morandi/20 border-y border-morandi/20">
-        <a href="#" class="reveal group block py-8 md:py-10">
-          <div class="flex items-start justify-between gap-8">
-            <div class="flex-1">
-              <div class="flex items-baseline gap-4 mb-3">
-                <time class="eyebrow">2025.06.12</time>
-                <span class="text-textFaint text-xs">· Thoughts</span>
-              </div>
-              <h3 class="text-xl md:text-2xl font-display font-medium text-textDark mb-3 leading-snug group-hover:text-deepSky transition-colors">
-                关于前端性能优化的一些思考
-              </h3>
-              <p class="text-textLight font-serif leading-relaxed text-sm md:text-base">
-                在构建大型单页应用时，性能优化不仅仅是技术问题，更是一种对用户体验的关怀。从懒加载到代码分割，每一步都在为用户的等待时间争取温柔。
-              </p>
-            </div>
-            <div class="flex-shrink-0 mt-1 text-deepSky opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="reveal group block py-8 md:py-10">
-          <div class="flex items-start justify-between gap-8">
-            <div class="flex-1">
-              <div class="flex items-baseline gap-4 mb-3">
-                <time class="eyebrow">2025.05.20</time>
-                <span class="text-textFaint text-xs">· Design</span>
-              </div>
-              <h3 class="text-xl md:text-2xl font-display font-medium text-textDark mb-3 leading-snug group-hover:text-deepSky transition-colors">
-                从自然中汲取设计灵感
-              </h3>
-              <p class="text-textLight font-serif leading-relaxed text-sm md:text-base">
-                大自然是最好的设计师。树叶的脉络、水面的波纹、云朵的形态，这些看似随意的图案背后，都藏着精妙的秩序与和谐。
-              </p>
-            </div>
-            <div class="flex-shrink-0 mt-1 text-deepSky opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="reveal group block py-8 md:py-10">
-          <div class="flex items-start justify-between gap-8">
-            <div class="flex-1">
-              <div class="flex items-baseline gap-4 mb-3">
-                <time class="eyebrow">2025.04.08</time>
-                <span class="text-textFaint text-xs">· Engineering</span>
-              </div>
-              <h3 class="text-xl md:text-2xl font-display font-medium text-textDark mb-3 leading-snug group-hover:text-deepSky transition-colors">
-                TypeScript 让代码更有温度
-              </h3>
-              <p class="text-textLight font-serif leading-relaxed text-sm md:text-base">
-                类型系统不只是约束，更是一种沟通方式。它让代码之间的对话更清晰，让团队协作更温暖，让维护不再是负担。
-              </p>
-            </div>
-            <div class="flex-shrink-0 mt-1 text-deepSky opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="relative bg-gradient-to-b from-skyBlue/5 via-cream to-cream py-24 md:py-32">
@@ -401,7 +430,7 @@
             <div class="flex-1 h-px bg-gradient-to-r from-morandi/40 to-transparent"></div>
           </div>
           <div class="space-y-3">
-            <a href="#" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
+            <a href="https://github.com/Ray3417" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
               <div class="w-12 h-12 rounded-full bg-deepSky/10 flex items-center justify-center flex-shrink-0 group-hover:bg-deepSky/20 group-hover:scale-110 transition-all duration-300">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5BA3D9" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </div>
@@ -410,7 +439,7 @@
                   <p class="text-sm text-textDark font-medium group-hover:text-deepSky transition-colors">GitHub</p>
                   <svg class="w-4 h-4 text-textLight/40 group-hover:text-deepSky group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
                 </div>
-                <p class="text-xs text-textLight font-serif">@Ray3417</p>
+                <p class="text-xs text-textLight font-serif">github.com/Ray3417</p>
               </div>
             </a>
             <a href="#" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
@@ -422,10 +451,10 @@
                   <p class="text-sm text-textDark font-medium group-hover:text-grassGreen transition-colors">微信</p>
                   <svg class="w-4 h-4 text-textLight/40 group-hover:text-grassGreen group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
                 </div>
-                <p class="text-xs text-textLight font-serif">Ray3417</p>
+                <p class="text-xs text-textLight font-serif">ray25425</p>
               </div>
             </a>
-            <a href="mailto:hello@ray3417.dev" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
+            <a href="mailto:ray_wr@qq.com" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
               <div class="w-12 h-12 rounded-full bg-warmBrown/10 flex items-center justify-center flex-shrink-0 group-hover:bg-warmBrown/20 group-hover:scale-110 transition-all duration-300">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A67C52" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
@@ -434,7 +463,7 @@
                   <p class="text-sm text-textDark font-medium group-hover:text-warmBrown transition-colors">邮箱</p>
                   <svg class="w-4 h-4 text-textLight/40 group-hover:text-warmBrown group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
                 </div>
-                <p class="text-xs text-textLight font-serif">hello@ray3417.dev</p>
+                <p class="text-xs text-textLight font-serif">ray_wr@qq.com</p>
               </div>
             </a>
           </div>
@@ -520,7 +549,7 @@
           <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M6 12C3.2 12 1 9.8 1 7s2.2-5 5-5c.4 0 .7.1 1.1.2C7.8 1.2 8.3.5 9 .2c1-.5 2.2-.2 3 .5 1.2-1.1 2.8-1.6 4.4-1.3 2.3.4 4 2.4 4 4.8 0 .2 0 .3-.1.5 1.4.6 2.2 2 2 3.5-.2 1.6-1.4 2.8-3 2.8H6z" fill="#8FB996"/></svg>
           <span class="font-display text-lg text-textDark">Ray3417</span>
         </div>
-        <p class="text-sm text-textLight font-serif mb-2">用代码编织温暖的数字体验</p>
+        <p class="text-sm text-textLight font-serif mb-2">网页正在建设中</p>
       </div>
       <div class="divider-line mb-6"></div>
       <p class="text-center text-xs text-textFaint font-serif">Ray3417 &copy; 2025 &middot; Built with care and a lot of sunshine</p>
