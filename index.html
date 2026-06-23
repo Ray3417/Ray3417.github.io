@@ -3,620 +3,1204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ray3417 | 个人主页</title>
-  <meta name="description" content="Ray3417 - 一个治愈系的数字小屋">
-  <!-- 预编译的 Tailwind CSS（GitHub Pages 为静态托管，无法实时构建） -->
+  <title>Ray · 黄昏漫游者</title>
+  <meta name="description" content="Ray 的数字小屋 — 一个喜欢在黄昏时分抬头看天的人">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Google Fonts: Cormorant Garamond (display) + Noto Serif SC (中文衬线) + Inter (英文UI) -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Mouse cursor glow（桌面端氛围点缀） -->
-  <div class="cursor-glow hidden md:block" id="cursorGlow" aria-hidden="true"></div>
-
-  <!-- Navbar -->
-  <nav class="nav-glass fixed top-0 left-0 w-full z-50" id="navbar">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-2 group">
-        <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true">
-          <path d="M6 12C3.2 12 1 9.8 1 7s2.2-5 5-5c.4 0 .7.1 1.1.2C7.8 1.2 8.3.5 9 .2c1-.5 2.2-.2 3 .5 1.2-1.1 2.8-1.6 4.4-1.3 2.3.4 4 2.4 4 4.8 0 .2 0 .3-.1.5 1.4.6 2.2 2 2 3.5-.2 1.6-1.4 2.8-3 2.8H6z" fill="#8FB996"/>
-        </svg>
-        <span class="font-display text-lg text-textDark tracking-wide">Ray3417</span>
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  TOP NAV                                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav class="nav-bar" id="navbar">
+    <div class="nav-bar__inner">
+      <a href="#" class="nav-logo group" data-nav="hero">
+        <span class="nav-logo__name">Ray</span>
+        <span class="nav-logo__suffix">/ 3417</span>
       </a>
-      <div class="hidden md:flex items-center gap-10 text-sm text-textDark/80">
-        <a href="#about" class="hover:text-deepSky transition-colors duration-300">关于我</a>
-        <a href="#works" class="hover:text-deepSky transition-colors duration-300">作品集</a>
-        <a href="#contact" class="hover:text-deepSky transition-colors duration-300">联系</a>
-      </div>
-      <button class="md:hidden text-textDark p-2" id="menuBtn" aria-label="切换菜单">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <line x1="4" y1="6" x2="20" y2="6"/>
-          <line x1="4" y1="12" x2="20" y2="12"/>
-          <line x1="4" y1="18" x2="20" y2="18"/>
-        </svg>
-      </button>
-    </div>
-    <div class="md:hidden hidden bg-cream/95 backdrop-blur-md border-t border-morandi/30" id="mobileMenu">
-      <div class="flex flex-col items-center gap-5 py-6 text-sm text-textDark/80">
-        <a href="#about" class="hover:text-deepSky transition-colors" onclick="closeMenu()">关于我</a>
-        <a href="#works" class="hover:text-deepSky transition-colors" onclick="closeMenu()">作品集</a>
-        <a href="#contact" class="hover:text-deepSky transition-colors" onclick="closeMenu()">联系</a>
+      <div class="nav-links">
+        <a href="#" class="nav-link" data-page="0">扉页</a>
+        <a href="#" class="nav-link" data-page="1">关于</a>
+        <a href="#" class="nav-link" data-page="2">纸笺</a>
+        <a href="#" class="nav-link" data-page="3">寄信</a>
       </div>
     </div>
+    <div class="nav-bar__rule"></div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
-    <div class="absolute inset-0">
-      <img src="assets/Image-5.jpeg" alt="" class="w-full h-full object-cover object-center" loading="eager" aria-hidden="true">
-    </div>
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  BOOK — 书本容器（参考示例的双面翻页）    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="book-container" id="book-container">
 
-    <!-- SVG Clouds -->
-    <svg class="absolute animate-float-slow" style="top:12%;left:3%;width:260px;height:120px;opacity:.85" viewBox="0 0 260 120" fill="none" aria-hidden="true">
-      <ellipse cx="90" cy="75" rx="80" ry="35" fill="white" opacity=".9"/>
-      <ellipse cx="60" cy="60" rx="50" ry="32" fill="white" opacity=".92"/>
-      <ellipse cx="120" cy="55" rx="55" ry="38" fill="white"/>
-      <ellipse cx="150" cy="65" rx="45" ry="30" fill="white" opacity=".88"/>
-      <ellipse cx="75" cy="48" rx="35" ry="28" fill="white"/>
-      <ellipse cx="110" cy="40" rx="40" ry="30" fill="white"/>
-      <ellipse cx="140" cy="50" rx="30" ry="24" fill="white" opacity=".9"/>
-      <ellipse cx="95" cy="35" rx="25" ry="22" fill="white" opacity=".95"/>
-    </svg>
-    <svg class="absolute animate-float-slower" style="top:8%;right:8%;width:320px;height:140px;opacity:.8" viewBox="0 0 320 140" fill="none" aria-hidden="true">
-      <ellipse cx="160" cy="95" rx="120" ry="40" fill="white" opacity=".88"/>
-      <ellipse cx="120" cy="80" rx="70" ry="42" fill="white" opacity=".9"/>
-      <ellipse cx="200" cy="75" rx="80" ry="45" fill="white"/>
-      <ellipse cx="230" cy="85" rx="60" ry="35" fill="white" opacity=".85"/>
-      <ellipse cx="100" cy="65" rx="50" ry="35" fill="white"/>
-      <ellipse cx="160" cy="55" rx="60" ry="40" fill="white"/>
-      <ellipse cx="210" cy="60" rx="45" ry="32" fill="white" opacity=".92"/>
-      <ellipse cx="140" cy="48" rx="40" ry="30" fill="white"/>
-      <ellipse cx="180" cy="42" rx="35" ry="28" fill="white" opacity=".95"/>
-    </svg>
-    <svg class="absolute animate-float" style="top:28%;left:20%;width:160px;height:80px;opacity:.5" viewBox="0 0 160 80" fill="none" aria-hidden="true">
-      <ellipse cx="80" cy="52" rx="60" ry="24" fill="white" opacity=".85"/>
-      <ellipse cx="60" cy="42" rx="38" ry="22" fill="white"/>
-      <ellipse cx="100" cy="40" rx="42" ry="26" fill="white" opacity=".9"/>
-      <ellipse cx="75" cy="32" rx="28" ry="20" fill="white"/>
-      <ellipse cx="95" cy="35" rx="22" ry="18" fill="white" opacity=".95"/>
-    </svg>
-    <!-- Birds -->
-    <svg class="absolute top-[28%] left-[40%] animate-float-slow opacity-40" width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden="true">
-      <path d="M0 6C4 2 8 0 10 2C12 0 16 2 20 6" stroke="#3D3D3D" stroke-width="1.2"/>
-    </svg>
-    <svg class="absolute top-[22%] right-[30%] animate-float opacity-30" width="16" height="10" viewBox="0 0 20 12" fill="none" aria-hidden="true">
-      <path d="M0 6C4 2 8 0 10 2C12 0 16 2 20 6" stroke="#3D3D3D" stroke-width="1.2"/>
-    </svg>
-
-    <!-- Hero Content -->
-    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto" style="padding-top:80px">
-      <div class="bg-white/40 backdrop-blur-md rounded-3xl px-8 py-14 md:px-20 md:py-20 border border-white/30 shadow-lg">
-        <p class="eyebrow mb-5">Welcome to my world</p>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-textDark mb-6 leading-[1.1] font-display">
-          你好，我是 <span class="text-deepSky">Ray3417</span>
-        </h1>
-        <div class="w-16 h-px bg-morandi mx-auto mb-6"></div>
-        <p class="text-lg md:text-xl text-textDark font-serif mb-3 leading-relaxed">网页正在建设中</p>
-        <p class="text-sm text-textDark/70 font-inter tracking-wider mb-10">AI Algorithm Engineer &amp; Developer</p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#works" class="btn-glow px-8 py-3 bg-deepSky text-white rounded-full text-sm tracking-wide font-medium">浏览作品</a>
-          <a href="#contact" class="btn-glow px-8 py-3 bg-white/70 text-textDark border border-morandi/40 rounded-full text-sm tracking-wide font-medium">联系我</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom wave with infinite scrolling animation -->
-    <div class="absolute bottom-0 left-0 w-full z-10 overflow-hidden" id="waveContainer">
-      <svg viewBox="0 0 2880 120" fill="none" preserveAspectRatio="none" class="wave-scroll-animation" style="height:80px; width: 2880px;" aria-hidden="true">
-        <!-- 第一层波浪：周期性波形，每1440px重复一次 -->
-        <path d="M0,60 Q180,10 360,60 T720,60 T1080,60 T1440,60 Q1620,10 1800,60 T2160,60 T2520,60 T2880,60 L2880,120 L0,120 Z" fill="#FDF8F0"/>
-        <!-- 第二层波浪：相位偏移，形成层次感 -->
-        <path d="M0,80 Q120,40 240,80 T480,80 T720,80 T960,80 T1200,80 T1440,80 Q1560,40 1680,80 T1920,80 T2160,80 T2400,80 T2640,80 T2880,80 L2880,120 L0,120 Z" fill="#FDF8F0" opacity=".5"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-24 md:py-32 relative bg-cream">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="reveal text-center mb-16">
-        <p class="eyebrow mb-3">About me</p>
-        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display">关于我</h2>
-      </div>
-      <div class="flex flex-col md:flex-row items-start gap-12 md:gap-16">
-        <!-- Avatar -->
-        <div class="reveal flex-shrink-0 mx-auto md:mx-0">
-          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-skyBlue/20 via-softGreen/20 to-morandi/20 flex items-center justify-center shadow-sm overflow-hidden ring-4 ring-white/60">
-            <img src="assets/profile photo.jpg" alt="Ray3417" class="w-full h-full object-cover object-top">
+    <!-- ==========  PAGE 0 · 扉页（封面） ========== -->
+    <div class="page page--hero" id="page-0" data-name="hero">
+      <div class="page-front page-front--cover">
+        <div class="page__inner">
+          <div class="page__head">
+            <span class="date-hand">a quiet evening — 2024.06.23</span>
+            <span class="stamp stamp-anim">Ray · 3417</span>
+          </div>
+          <div class="page__title">
+            <h1 class="page__h1">
+              你好，我是 <span class="page__h1-name">Ray</span><span class="page__h1-dot">.</span>
+            </h1>
+            <div class="page__subline">
+              <span class="ink-line"></span>
+              <span class="page__subline-text">— a wandering coder</span>
+            </div>
+            <p class="page__lead">
+              网页正在建设中。这里曾是一个安静的角落，<br>现在准备慢慢填满文字。
+            </p>
+            <p class="page__lead-en">A small house under construction — built with quiet patience.</p>
+          </div>
+          <div class="page__actions">
+            <a href="#" class="btn-text btn-text-primary" data-go="1">进来坐坐</a>
+            <a href="#" class="btn-text" data-go="2">翻翻纸笺</a>
+          </div>
+          <div class="page__foot">
+            <p class="page__note">※ 这一页只是扉页，正文尚未落笔。</p>
           </div>
         </div>
-        <!-- Bio -->
-        <div class="reveal flex-1">
-          <p class="text-textDark font-serif text-base md:text-lg leading-relaxed mb-5">
-            嗨！我是一名立志成为 AI 算法与开发工程师的学习者。对大语言模型、深度学习与计算机视觉充满兴趣，享受从数据到模型、从训练到部署的完整探索过程。
-          </p>
-          <p class="text-textDark font-serif text-base md:text-lg leading-relaxed mb-8">
-            平日里专注于算法原理与工程实践的打磨，也喜欢阅读论文、复现开源项目。相信扎实的数学基础与良好的工程习惯，是让 AI 真正走向应用的两个支点。
-          </p>
-          <div class="divider-line mb-6"></div>
-          <p class="eyebrow mb-4">Skills &amp; Tools</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">Python</span>
-            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">PyTorch</span>
-            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">TensorFlow</span>
-            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">Transformers</span>
-            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">NumPy &amp; Pandas</span>
-            <span class="tag text-deepSky border-deepSky/30 bg-deepSky/8">CUDA</span>
-            <span class="tag text-warmBrown border-warmBrown/30 bg-warmBrown/8">Linux</span>
-            <span class="tag text-grassGreen border-grassGreen/30 bg-grassGreen/8">Git</span>
+
+        <span class="corner-mark corner-mark--tl"></span>
+        <span class="corner-mark corner-mark--tr"></span>
+        <span class="corner-mark corner-mark--bl"></span>
+        <span class="corner-mark corner-mark--br"></span>
+
+        <!-- 金属圆环装订孔（象征页面被钉在一起）-->
+        <div class="page-ring page-ring--1"></div>
+        <div class="page-ring page-ring--2"></div>
+        <div class="page-ring page-ring--3"></div>
+        <div class="page-ring page-ring--4"></div>
+        <div class="page-ring page-ring--5"></div>
+
+        <!-- 火漆印 + 翻页触发点 -->
+        <div class="wax-seal-wrap" data-go="1" aria-label="揭开火漆印，翻到下一页">
+          <div class="wax-seal__imprint"></div>
+          <img
+            src="assets/sealing_wax.png"
+            alt=""
+            class="wax-seal"
+            width="105"
+            height="106"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <!-- 翻页纸角（右下角揭起）-->
+        <div class="page-corner page-corner--right" data-go="1" aria-label="翻到下一页"></div>
+      </div>
+    </div>
+
+    <!-- ==========  PAGE 1 · 关于 ========== -->
+    <div class="page page--about" id="page-1" data-name="about">
+      <div class="page-front page-front--paper">
+        <div class="page__inner">
+          <div class="page__head">
+            <span class="date-hand">chapter one — 关于我</span>
+            <span class="stamp">page · 02</span>
           </div>
+          <h2 class="page__h2">关于<br><span class="page__h2-en">a little about me</span></h2>
+          <div class="page__rule"></div>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p class="about-lead">
+                你好，我是 <em>Ray</em>，一个喜欢在黄昏时分抬头看天的人。
+              </p>
+              <p>
+                做 AI 算法与工程实践，研究方向是遥感图像处理与深度学习。
+                目前在做一个 LLM 相关的 Mock API 项目——它让我相信，
+                <em>让 AI 调试变得简单高效</em>这件事，本身就值得被认真对待。
+              </p>
+              <p>
+                业余时间读读闲书，听听老歌，偶尔在窗台上种一棵不会说话的小植物。
+                这个小屋子是给这些散落念头的收件箱。
+              </p>
+              <p class="about-sign">
+                <span class="about-sign-line"></span>
+                <span class="about-sign-name">— Ray,</span>
+                <span class="about-sign-date">at a quiet evening</span>
+              </p>
+            </div>
+            <div class="about-frame">
+              <div class="about-frame__window">
+                <div class="about-frame__stars">
+                  <span class="star" style="top:8%;left:12%;animation-delay:0s"></span>
+                  <span class="star" style="top:18%;right:18%;animation-delay:0.7s"></span>
+                  <span class="star" style="top:32%;left:8%;animation-delay:1.2s"></span>
+                  <span class="star star--bright" style="bottom:24%;right:12%;animation-delay:0.4s"></span>
+                  <span class="star" style="bottom:38%;left:18%;animation-delay:1.5s"></span>
+                  <span class="star" style="top:48%;right:8%;animation-delay:0.9s"></span>
+                </div>
+                <div class="about-frame__img">
+                  <img
+                    src="assets/luobu-8e7f83f3-813a-4ed8-a002-18cc7802988a.webp"
+                    alt="深夜敲代码的小萝卜"
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <p class="about-frame__caption">a small window at night</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-skills">
+            <p class="eyebrow">skills &amp; tools</p>
+            <div class="about-skills__rule"></div>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">CUDA</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="corner-mark corner-mark--tl"></span>
+        <span class="corner-mark corner-mark--tr"></span>
+        <span class="corner-mark corner-mark--bl"></span>
+        <span class="corner-mark corner-mark--br"></span>
+
+        <!-- 金属圆环装订孔 -->
+        <div class="page-ring page-ring--1"></div>
+        <div class="page-ring page-ring--2"></div>
+        <div class="page-ring page-ring--3"></div>
+        <div class="page-ring page-ring--4"></div>
+        <div class="page-ring page-ring--5"></div>
+
+        <div class="page-back-tab" data-go="0" aria-label="翻回扉页">
+          <span class="page-back-tab__arrow">←</span>
+          <span class="page-back-tab__text">back to cover</span>
+        </div>
+        <div class="page-corner page-corner--right" data-go="2" aria-label="翻到纸笺"></div>
+      </div>
+    </div>
+
+    <!-- ==========  PAGE 2 · 纸笺（占位）========== -->
+    <div class="page page--works" id="page-2" data-name="works">
+      <div class="page-front page-front--paper">
+        <div class="page__inner">
+          <div class="page__head">
+            <span class="date-hand">chapter two — 纸笺</span>
+            <span class="stamp">page · 03</span>
+          </div>
+          <h2 class="page__h2">纸笺<br><span class="page__h2-en">papers &amp; notes</span></h2>
+          <div class="page__rule"></div>
+          <p class="works-placeholder">这一页尚未落笔，敬请期待。</p>
+        </div>
+        <span class="corner-mark corner-mark--tl"></span>
+        <span class="corner-mark corner-mark--tr"></span>
+        <span class="corner-mark corner-mark--bl"></span>
+        <span class="corner-mark corner-mark--br"></span>
+
+        <!-- 金属圆环装订孔 -->
+        <div class="page-ring page-ring--1"></div>
+        <div class="page-ring page-ring--2"></div>
+        <div class="page-ring page-ring--3"></div>
+        <div class="page-ring page-ring--4"></div>
+        <div class="page-ring page-ring--5"></div>
+
+        <div class="page-back-tab" data-go="1" aria-label="翻回关于">
+          <span class="page-back-tab__arrow">←</span>
+          <span class="page-back-tab__text">back to about</span>
+        </div>
+        <div class="page-corner page-corner--right" data-go="3" aria-label="翻到寄信"></div>
+      </div>
+    </div>
+
+    <!-- ==========  PAGE 3 · 寄信（封底）========== -->
+    <div class="page page--contact" id="page-3" data-name="contact">
+      <div class="page-front page-front--paper page-front--back">
+        <div class="page__inner">
+          <div class="page__head">
+            <span class="date-hand">chapter three — 寄信</span>
+            <span class="stamp">page · 04</span>
+          </div>
+          <h2 class="page__h2">寄信<br><span class="page__h2-en">drop a line</span></h2>
+          <div class="page__rule"></div>
+          <p class="works-placeholder">联系方式：GitHub @Ray3417</p>
+        </div>
+        <span class="corner-mark corner-mark--tl"></span>
+        <span class="corner-mark corner-mark--tr"></span>
+        <span class="corner-mark corner-mark--bl"></span>
+        <span class="corner-mark corner-mark--br"></span>
+
+        <!-- 金属圆环装订孔 -->
+        <div class="page-ring page-ring--1"></div>
+        <div class="page-ring page-ring--2"></div>
+        <div class="page-ring page-ring--3"></div>
+        <div class="page-ring page-ring--4"></div>
+        <div class="page-ring page-ring--5"></div>
+
+        <div class="page-back-tab" data-go="2" aria-label="翻回纸笺">
+          <span class="page-back-tab__arrow">←</span>
+          <span class="page-back-tab__text">back to papers</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Flower divider -->
-  <div class="flex justify-center py-4 bg-cream" aria-hidden="true">
-    <svg width="220" height="30" viewBox="0 0 220 30" fill="none">
-      <line x1="0" y1="15" x2="80" y2="15" stroke="#D4C5B9" stroke-width=".5"/>
-      <circle cx="95" cy="15" r="3" fill="#F2D7D5"/>
-      <circle cx="110" cy="10" r="2.5" fill="#F2D7D5" opacity=".7"/>
-      <circle cx="110" cy="20" r="2.5" fill="#F2D7D5" opacity=".7"/>
-      <circle cx="125" cy="15" r="3" fill="#F2D7D5"/>
-      <circle cx="110" cy="15" r="2" fill="#C4A882"/>
-      <line x1="140" y1="15" x2="220" y2="15" stroke="#D4C5B9" stroke-width=".5"/>
-    </svg>
   </div>
 
-  <!-- Portfolio — Projects & Publications -->
-  <section id="works" class="py-24 md:py-32 relative works-bg">
-    <div class="max-w-6xl mx-auto px-6">
+  <style>
+    /* ═══════════════════════════════════════════ */
+    /*  全局：视口锁定                            */
+    /* ═══════════════════════════════════════════ */
+    html, body {
+      overflow: hidden;
+      height: 100vh;
+      max-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
 
-      <!-- ═══════════════════════════════════════════ -->
-      <!-- SECTION HEADER                               -->
-      <!-- ═══════════════════════════════════════════ -->
-      <div class="reveal mb-16 md:mb-20">
-        <h2 class="text-5xl md:text-6xl font-medium text-textDark font-display leading-tight mb-5">Projects &amp; Publications</h2>
-        <p class="text-textLight font-serif text-sm md:text-base leading-relaxed max-w-xl">
-          从算法研究到工程落地的实践。每一项工作都经过亲手复现与验证。
-        </p>
-        <div class="proj-rule mt-8 max-w-xs"></div>
-      </div>
+    /* ═══════════════════════════════════════════ */
+    /*  NAV                                       */
+    /* ═══════════════════════════════════════════ */
+    .nav-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background: rgba(253, 248, 240, 0.78);
+    }
+    .nav-bar__inner {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-bar__rule {
+      max-width: 64rem;
+      margin: 0 auto;
+      height: 1px;
+      background: var(--rule);
+    }
+    .nav-logo { display: flex; align-items: baseline; gap: 0.5rem; }
+    .nav-logo__name {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--ink-soft);
+    }
+    .nav-logo__suffix {
+      font-family: 'Caveat', cursive;
+      color: var(--warm);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; font-size: 0.875rem; color: var(--ink-soft); }
+    .nav-link {
+      position: relative;
+      font-family: 'Noto Serif SC', serif;
+      letter-spacing: 0.08em;
+      padding-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--warm);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.4s ease;
+    }
+    .nav-link:hover { color: var(--warm-deep); }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-link.is-active { color: var(--ink); }
+    .nav-link.is-active::after { transform: scaleX(1); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
 
-      <!-- ═══════════════════════════════════════════ -->
-      <!-- PART I — PROJECTS                           -->
-      <!-- ═══════════════════════════════════════════ -->
-      <div class="reveal mb-20">
-        <div class="flex items-center gap-5 mb-8">
-          <p class="section-eyebrow-line mb-0">Projects &nbsp;/&nbsp; 02</p>
-        </div>
+    /* ═══════════════════════════════════════════ */
+    /*  BOOK CONTAINER（参考示例）                */
+    /* ═══════════════════════════════════════════ */
+    .book-container {
+      position: relative;
+      width: 100vw;
+      height: calc(100vh - 60px);
+      margin-top: 60px;
+      perspective: 2400px;
+      perspective-origin: 0% 50%;
+      overflow: hidden;
+    }
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    /* —— PAGE —— */
+    .page {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      transform-origin: left center;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      backface-visibility: hidden;
+    }
 
-          <!-- Project 01 — LLM-Mock-API -->
-          <a href="https://github.com/Ray3417/llm-mock-api" target="_blank" rel="noopener"
-             class="proj-card group block rounded-2xl overflow-hidden">
-            <!-- Top image zone -->
-            <div class="relative h-48 overflow-hidden" style="background: linear-gradient(135deg, #2D2D35 0%, #3A4A5A 50%, #1E2A3A 100%);">
-              <!-- Decorative code pattern -->
-              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 20px, rgba(255,255,255,0.15) 20px, rgba(255,255,255,0.15) 21px), repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(255,255,255,0.08) 60px, rgba(255,255,255,0.08) 61px);"></div>
-              <!-- Code snippet decoration -->
-              <div class="absolute bottom-4 left-5 right-5 text-left">
-                <div class="flex flex-col gap-1.5">
-                  <div class="flex items-center gap-3"><span style="color:#5BA3D9;font-size:0.7rem;font-family:monospace">01</span><span style="color:rgba(255,255,255,0.5);font-size:0.65rem;font-family:monospace"># Mock LLM APIs for development</span></div>
-                  <div class="flex items-center gap-3"><span style="color:#8FB996;font-size:0.7rem;font-family:monospace">02</span><span style="color:rgba(255,255,255,0.5);font-size:0.65rem;font-family:monospace">const mock = createMock(provider)</span></div>
-                  <div class="flex items-center gap-3"><span style="color:#C8A882;font-size:0.7rem;font-family:monospace">03</span><span style="color:rgba(255,255,255,0.5);font-size:0.65rem;font-family:monospace">await mock.stream(params)</span></div>
-                </div>
-              </div>
-              <!-- Language icon -->
-              <div class="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                <span style="color:rgba(255,255,255,0.7);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;">TypeScript</span>
-              </div>
-            </div>
-            <!-- Content -->
-            <div class="p-7 md:p-8">
-              <div class="flex items-start justify-between gap-3 mb-4">
-                <div>
-                  <h3 class="text-xl font-display font-medium text-textDark leading-tight mb-1.5 group-hover:text-deepSky transition-colors">LLM-Mock-API</h3>
-                  <p class="proj-meta">AI Engineering &amp; Developer Tools</p>
-                </div>
-                <!-- GitHub link icon -->
-                <div class="flex-shrink-0 mt-1">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D3D3D" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </div>
-              </div>
-              <p class="text-textLight font-serif text-sm leading-relaxed mb-5">
-                为 LLM API 调用提供本地 Mock 服务，支持流式输出与多模型适配器。开发阶段无需真实 API Key，随时切换真实/模拟接口，大幅提升调试效率。
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="proj-spec text-deepSky">Node.js</span>
-                <span class="proj-spec text-grassGreen">TypeScript</span>
-                <span class="proj-spec text-warmBrown">REST / SSE</span>
-                <span class="proj-spec text-deepSky">Vitest</span>
-              </div>
-            </div>
-          </a>
+    /* —— PAGE FRONT —— */
+    .page-front {
+      position: absolute;
+      width: 100%; height: 100%;
+      top: 0; left: 0;
+      backface-visibility: hidden;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-          <!-- Project 02 — Claude Code Clone (Coming Soon) -->
-          <div class="proj-coming-soon rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-72" style="padding: 4rem 2rem;">
-            <!-- Animated coming soon icon -->
-            <div class="mb-6 relative">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto" style="background: rgba(91, 163, 217, 0.1); border: 1px solid rgba(91, 163, 217, 0.25);">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5BA3D9" stroke-width="1.3" aria-hidden="true">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                </svg>
-              </div>
-            </div>
-            <h3 class="text-xl font-display font-medium text-textDark mb-2 leading-tight">仿 Claude Code 项目</h3>
-            <p class="proj-meta text-textLight/60 mb-4">AI Engineering &amp; CLI Tools</p>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full" style="background: rgba(91, 163, 217, 0.08); border: 1px solid rgba(91, 163, 217, 0.2);">
-              <span style="width:6px;height:6px;border-radius:50%;background:#5BA3D9;animation:arrowPulse 1.8s ease-in-out infinite;display:inline-block;"></span>
-              <span style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#5BA3D9;">Coming Soon</span>
-            </div>
-            <div class="proj-rule mt-6 mb-4 w-16 mx-auto"></div>
-            <p class="text-textLight font-serif text-xs leading-relaxed max-w-xs">
-              基于大型语言模型的 AI 编程助手，复刻 Claude Code 的核心交互逻辑与工具调用能力。
-            </p>
-          </div>
+    /* —— 扉页 · 封面（米白底） —— */
+    .page-front--cover {
+      background: var(--paper);
+    }
+    .page-front--cover::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: linear-gradient(to right,
+        rgba(80,50,30,0.15) 0%,
+        rgba(80,50,30,0.05) 50%,
+        transparent 100%);
+    }
 
-        </div>
-      </div>
+    /* ————————————————————————————
+       金属圆环打孔（装订线装饰）
+       ———————————————————————————— */
+    .page-ring {
+      position: absolute;
+      left: 28px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .page-ring::before {
+      /* 金属环外圈 */
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%,
+          #f5f0e0 0%,
+          #d9c8a9 18%,
+          #b89a6b 35%,
+          #8a6a40 55%,
+          #5c4520 75%,
+          #3a2a12 100%);
+      box-shadow:
+        0 1px 2px rgba(80,50,30,0.35),
+        inset 0 1px 0 rgba(255,240,210,0.4),
+        inset 0 -1px 2px rgba(60,40,20,0.5);
+    }
+    .page-ring::after {
+      /* 内孔（透明，露出纸张或更深的颜色） */
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%,
+          #3a2a12 0%,
+          #5c4520 40%,
+          #8a6a40 70%,
+          #b89a6b 100%);
+      box-shadow:
+        inset 0 2px 4px rgba(0,0,0,0.55),
+        inset 0 -1px 1px rgba(255,240,210,0.15);
+    }
+    /* 圆环位置：从上到下一列 5 个 */
+    .page-ring--1 { top: 12%; }
+    .page-ring--2 { top: 28%; }
+    .page-ring--3 { top: 44%; }
+    .page-ring--4 { top: 60%; }
+    .page-ring--5 { top: 76%; }
 
-      <!-- ═══════════════════════════════════════════ -->
-      <!-- PART II — PUBLICATIONS                      -->
-      <!-- ═══════════════════════════════════════════ -->
-      <div class="reveal">
-        <div class="flex items-center gap-5 mb-10">
-          <p class="section-eyebrow-line mb-0">Publications &nbsp;/&nbsp; 02 Papers</p>
-        </div>
+    /* —— 普通页 · 米白纸 —— */
+    .page-front--paper {
+      background: var(--paper);
+    }
+    .page-front--paper::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to right,
+        rgba(80,50,30,0.12) 0%,
+        rgba(80,50,30,0.03) 60%,
+        transparent 100%);
+    }
 
-        <!-- ─────────────────────────────────────────── -->
-        <!-- Paper 01 — CVIU 2024, CCF B                -->
-        <!-- ─────────────────────────────────────────── -->
-        <div class="pub-card block mb-6">
-          <div class="pub-rank-bar pub-rank-ccfb"></div>
-          <div class="grid grid-cols-1 md:grid-cols-12">
+    /* —— 封底 · 稍深色 —— */
+    .page-front--back {
+      background: var(--paper-warm);
+    }
 
-            <!-- Left: metadata + abstract -->
-            <div class="md:col-span-7 pub-content">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="venue-badge venue-badge-ccfb">CCF B · CVIU</span>
-                <span class="proj-meta">2024 &nbsp;·&nbsp; Computer Vision and Image Understanding</span>
-              </div>
-              <h3 class="font-display font-medium text-textDark mb-4 leading-snug">
-                <a href="https://doi.org/10.1016/j.cviu.2024.104061" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
-                  Camouflaged Object Segmentation with Prior via Two-Stage Training
-                </a>
-              </h3>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mb-4 text-sm font-serif leading-relaxed">
-                <span class="author-me">Rui Wang</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Caijuan Shi</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Changyu Duan</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Weixiang Gao</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Hongli Zhu</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Yunchao Wei</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Meiqin Liu</span>
-              </div>
-              <p class="text-textLight font-serif text-sm leading-relaxed mb-4">
-                提出 Prior-Guided Transformer (PGT)，通过高质量先验生成子网络与两阶段训练方法提升伪装物体分割精度，设计先验引导模块（PGM）建模位置与边界先验的全局/局部依赖关系。
-              </p>
-              <div class="flex flex-wrap gap-2 mb-5">
-                <span class="proj-spec text-warmBrown">COS</span>
-                <span class="proj-spec text-deepSky">Transformer</span>
-                <span class="proj-spec text-grassGreen">Two-Stage</span>
-                <span class="proj-spec text-warmBrown">Prior-Guided</span>
-              </div>
-              <div class="flex flex-wrap items-center gap-5">
-                <a href="https://doi.org/10.1016/j.cviu.2024.104061" target="_blank" rel="noopener" class="pub-link">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                  DOI
-                </a>
-                <a href="https://github.com/Ray3417/PGT" target="_blank" rel="noopener" class="pub-link">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Code
-                </a>
-                <span class="proj-meta" style="color: rgba(61, 61, 61, 0.35);">Vol. 246, 104061</span>
-              </div>
-            </div>
+    /* —— 翻页状态 —— */
+    .page.is-flipped {
+      transform: rotateY(-180deg);
+    }
+    /* —— 向后翻页：被翻回的那页（目标页）旋转回正面 —— */
+    .page.is-flipping-backward {
+      transform: rotateY(-180deg); /* 起始状态匹配 is-flipped */
+      animation: flipBackward 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes flipBackward {
+      from { transform: rotateY(-180deg); }
+      to { transform: rotateY(0deg); }
+    }
 
-            <!-- Right: figure slot (放入 pgt.png 即可) -->
-            <div class="md:col-span-5 figure-slot">
-              <img src="assets/figure/pgt.png" alt="PGT figure" class="figure-real" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="figure-fallback" style="display: flex;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-5 4 4M9 9l6 6"/></svg>
-                <span class="figure-fallback-label">PGT · Figure 1</span>
-                <span class="figure-fallback-path">assets/figure/pgt.png</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    /* —— 向回翻时：当前页（被翻过去的那页）同步做向前翻的动画 —— */
+    .page.is-flipping-forward {
+      transform: rotateY(0deg); /* 起始状态 */
+      animation: flipForward 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes flipForward {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(-180deg); }
+    }
 
-        <!-- ─────────────────────────────────────────── -->
-        <!-- Paper 02 — Neural Networks 2025, 中科院一区 -->
-        <!-- ─────────────────────────────────────────── -->
-        <div class="pub-card block">
-          <div class="pub-rank-bar pub-rank-1区"></div>
-          <div class="grid grid-cols-1 md:grid-cols-12">
+    /* 翻页过程中：火漆印破裂 + 纸张弯曲 */
+    .page.is-flipping-forward .wax-seal-wrap .wax-seal {
+      animation: waxBreak 0.8s ease-in forwards;
+    }
+    .page.is-flipping-forward .wax-seal-wrap .wax-seal__imprint {
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+    @keyframes waxBreak {
+      0%   { opacity: 1; transform: rotate(-5deg) scale(1); }
+      40%  { opacity: 0.9; transform: rotate(-12deg) scale(1.1); }
+      100% { opacity: 0; transform: rotate(-25deg) scale(0.2) translateY(-30px); }
+    }
 
-            <!-- Left: figure slot (放入 lrdnet.png 即可) -->
-            <div class="md:col-span-5 figure-slot md:order-1">
-              <img src="assets/figure/lrdnet.png" alt="LRDNet figure" class="figure-real" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="figure-fallback" style="display: flex;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-5 4 4M9 9l6 6"/></svg>
-                <span class="figure-fallback-label">LRDNet · Figure 1</span>
-                <span class="figure-fallback-path">assets/figure/lrdnet.png</span>
-              </div>
-            </div>
+    /* —— 翻页时纸张弯曲的"卷起纸角" —— */
+    .page.is-flipping-forward::after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 80px; height: 80px;
+      background: linear-gradient(
+        -45deg,
+        transparent 50%,
+        rgba(80,50,30,0.2) 80%,
+        rgba(80,50,30,0.35) 100%
+      );
+      border-radius: 0 0 30px 0;
+      box-shadow: 4px 4px 10px rgba(80,50,30,0.15);
+      z-index: 5;
+      animation: pageCornerLeft 0.85s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+      pointer-events: none;
+    }
+    @keyframes pageCornerLeft {
+      0%   { width: 0; height: 0; opacity: 0; }
+      30%  { width: 80px; height: 80px; opacity: 1; }
+      100% { width: 0; height: 0; opacity: 0; }
+    }
 
-            <!-- Right: metadata + abstract -->
-            <div class="md:col-span-7 pub-content md:order-2">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="venue-badge venue-badge-1区">中科院一区 · Neural Networks</span>
-                <span class="proj-meta">2025 &nbsp;·&nbsp; Elsevier</span>
-              </div>
-              <h3 class="font-display font-medium text-textDark mb-4 leading-snug">
-                <a href="https://doi.org/10.1016/j.neunet.2025.107915" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
-                  Long-Range Diffusion for Weakly Camouflaged Object Segmentation
-                </a>
-              </h3>
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mb-4 text-sm font-serif leading-relaxed">
-                <span class="author-me">Rui Wang</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Caijuan Shi</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Weixiang Gao</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Changyu Duan</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Ao Cai</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Fei Yu</span>
-                <span class="author-other">·</span>
-                <span class="author-other">Yunchao Wei</span>
-              </div>
-              <p class="text-textLight font-serif text-sm leading-relaxed mb-4">
-                提出 Long-Range Diffusion Network (LRDNet)，通过门控局部显著性一致性（GLSC）损失与两阶段训练策略，将稀疏标注信息扩散至全图，同时设计 Trans-Decorator 与 RUp 上采样模块捕获长程依赖。
-              </p>
-              <div class="flex flex-wrap gap-2 mb-5">
-                <span class="proj-spec text-deepSky">WSCOS</span>
-                <span class="proj-spec text-grassGreen">Weakly Supervised</span>
-                <span class="proj-spec text-warmBrown">Long-Range</span>
-                <span class="proj-spec text-deepSky">Transformer</span>
-              </div>
-              <div class="flex flex-wrap items-center gap-5">
-                <a href="https://doi.org/10.1016/j.neunet.2025.107915" target="_blank" rel="noopener" class="pub-link">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                  DOI
-                </a>
-                <a href="https://github.com/Ray3417/LRDNet" target="_blank" rel="noopener" class="pub-link">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Code
-                </a>
-                <span class="proj-meta" style="color: rgba(61, 61, 61, 0.35);">Vol. 192, 107915</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    /* —— PAGE INNER (内容容器) —— */
+    .page__inner {
+      max-width: 64rem;
+      width: 100%;
+      padding: 2.5rem 3rem;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-      </div>
-    </div>
-  </section>
+    /* —— 页面通用元素 —— */
+    .page__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .page__h1 {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 500;
+      margin: 0;
+    }
+    .page__h1-name {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--warm-deep);
+    }
+    .page__h1-dot { color: var(--warm); }
+    .page__subline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .page__subline-text {
+      font-family: 'Caveat', cursive;
+      color: var(--warm);
+      font-size: 1.25rem;
+    }
+    .page__lead {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--ink-soft);
+      max-width: 38rem;
+      line-height: 1.9;
+      margin-top: 2rem;
+      font-size: 1.0625rem;
+    }
+    .page__lead-en {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      color: var(--ink-fade);
+      max-width: 38rem;
+      margin-top: 0.5rem;
+    }
+    .page__actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .page__foot { margin-top: 3rem; }
+    .page__note {
+      font-family: 'Caveat', cursive;
+      color: var(--ink-fade);
+      font-size: 1rem;
+    }
 
+    .page__h2 {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--ink);
+      line-height: 1.1;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      margin: 0;
+    }
+    .page__h2-en {
+      display: block;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      color: var(--warm);
+      font-size: 0.5em;
+      font-weight: 400;
+      margin-top: 0.3rem;
+      letter-spacing: 0.05em;
+    }
+    .page__rule {
+      width: 40px;
+      height: 1px;
+      background: var(--warm);
+      opacity: 0.5;
+      margin: 1.5rem 0;
+    }
 
-  <!-- Contact Section -->
-  <section id="contact" class="relative bg-gradient-to-b from-skyBlue/5 via-cream to-cream py-24 md:py-32">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="reveal text-center mb-16">
-        <p class="eyebrow mb-3">Get in touch</p>
-        <h2 class="text-4xl md:text-5xl font-medium text-textDark font-display mb-4">联系我</h2>
-        <p class="text-textLight font-serif text-sm">期待与你的每一次相遇。</p>
-      </div>
+    /* ═══════════════════════════════════════════ */
+    /*  PAGE CORNER · 翻页纸角（弯起 + 飘动）      */
+    /* ═══════════════════════════════════════════ */
+    .page-corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 130px;
+      height: 130px;
+      cursor: pointer;
+      z-index: 12;
+      transform-origin: right bottom;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: cornerWave 6s ease-in-out infinite;
+    }
+    /* 纸角造型：右下角的三角形"被掀起"的样子 */
+    .page-corner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        /* 背面：暖色（背面纸张被太阳晒过） */
+        linear-gradient(135deg, var(--paper-warm) 0%, #e8d4a8 100%);
+      /* 三角形的纸角 */
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      box-shadow:
+        -4px -4px 12px rgba(80, 50, 30, 0.18),
+        inset 0 0 0 1px rgba(184, 119, 46, 0.15);
+    }
+    /* 折痕线 + 暗影 */
+    .page-corner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        /* 折痕对角线 */
+        linear-gradient(
+          -45deg,
+          transparent 49.5%,
+          rgba(139, 90, 31, 0.5) 49.8%,
+          rgba(139, 90, 31, 0.5) 50.2%,
+          transparent 50.5%
+        ),
+        /* 内侧深色阴影（卷起部分下方） */
+        linear-gradient(135deg, transparent 60%, rgba(80, 50, 30, 0.12) 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+    .page-corner:hover {
+      transform: scale(1.05);
+    }
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
-        <!-- Social links — 左 5 栏 -->
-        <div class="reveal md:col-span-5">
-          <div class="flex items-center gap-3 mb-8">
-            <h3 class="eyebrow">Follow me</h3>
-            <div class="flex-1 h-px bg-gradient-to-r from-morandi/40 to-transparent"></div>
-          </div>
-          <div class="space-y-3">
-            <a href="https://github.com/Ray3417" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
-              <div class="w-12 h-12 rounded-full bg-deepSky/10 flex items-center justify-center flex-shrink-0 group-hover:bg-deepSky/20 group-hover:scale-110 transition-all duration-300">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5BA3D9" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between">
-                  <p class="text-sm text-textDark font-medium group-hover:text-deepSky transition-colors">GitHub</p>
-                  <svg class="w-4 h-4 text-textLight/40 group-hover:text-deepSky group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </div>
-                <p class="text-xs text-textLight font-serif">github.com/Ray3417</p>
-              </div>
-            </a>
-            <a href="#" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
-              <div class="w-12 h-12 rounded-full bg-grassGreen/10 flex items-center justify-center flex-shrink-0 group-hover:bg-grassGreen/20 group-hover:scale-110 transition-all duration-300">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FB996" stroke-width="1.5" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between">
-                  <p class="text-sm text-textDark font-medium group-hover:text-grassGreen transition-colors">微信</p>
-                  <svg class="w-4 h-4 text-textLight/40 group-hover:text-grassGreen group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </div>
-                <p class="text-xs text-textLight font-serif">ray25425</p>
-              </div>
-            </a>
-            <a href="mailto:ray_wr@qq.com" class="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-morandi/15 card-hover group backdrop-blur-sm">
-              <div class="w-12 h-12 rounded-full bg-warmBrown/10 flex items-center justify-center flex-shrink-0 group-hover:bg-warmBrown/20 group-hover:scale-110 transition-all duration-300">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A67C52" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between">
-                  <p class="text-sm text-textDark font-medium group-hover:text-warmBrown transition-colors">邮箱</p>
-                  <svg class="w-4 h-4 text-textLight/40 group-hover:text-warmBrown group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </div>
-                <p class="text-xs text-textLight font-serif">ray_wr@qq.com</p>
-              </div>
-            </a>
-          </div>
-        </div>
+    /* —— 折痕下方的小阴影（用额外层）—— */
+    .page-corner__shadow {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 120px;
+      height: 120px;
+      pointer-events: none;
+      z-index: 11;
+      background: linear-gradient(135deg, transparent 60%, rgba(80, 50, 30, 0.18) 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
 
-        <!-- 右侧"深夜窗口" — 右 7 栏 -->
-        <div class="reveal md:col-span-7">
-          <div class="relative" style="aspect-ratio: 4/3;">
-            <!-- 沉浸式深色背景 — 不规则边缘的氛围光晕 -->
-            <div class="absolute inset-0 pointer-events-none" style="background:
-              radial-gradient(ellipse 70% 60% at 30% 40%, #2A2A5A 0%, transparent 60%),
-              radial-gradient(ellipse 80% 70% at 70% 60%, #1A1A3A 0%, transparent 65%),
-              radial-gradient(ellipse 100% 80% at 50% 50%, rgba(26,26,58,0.4) 0%, transparent 100%);
-            "></div>
+    /* —— 随风飘动动画 —— */
+    @keyframes cornerWave {
+      0%, 100% {
+        transform: rotate(0deg) translate(0, 0);
+      }
+      25% {
+        transform: rotate(1.5deg) translate(-1.5px, -2px);
+      }
+      50% {
+        transform: rotate(0.3deg) translate(0, -3px);
+      }
+      75% {
+        transform: rotate(-1deg) translate(1px, -1.5px);
+      }
+    }
 
-            <!-- 装饰星点 — 散布在画布上 -->
-            <div class="absolute top-[8%] left-[12%] w-1 h-1 rounded-full bg-[#F8E5B0] opacity-70 star-twinkle"></div>
-            <div class="absolute top-[18%] right-[20%] w-1.5 h-1.5 rounded-full bg-[#F8E5B0] opacity-50 star-twinkle" style="animation-delay:0.7s"></div>
-            <div class="absolute top-[30%] left-[6%] w-0.5 h-0.5 rounded-full bg-[#F8E5B0] opacity-60 star-twinkle" style="animation-delay:1.2s"></div>
-            <div class="absolute bottom-[20%] right-[8%] w-1 h-1 rounded-full bg-[#F8E5B0] opacity-80 animate-pulse" style="animation-delay:0.4s"></div>
-            <div class="absolute bottom-[35%] left-[15%] w-0.5 h-0.5 rounded-full bg-[#F8E5B0] opacity-50 star-twinkle" style="animation-delay:1.5s"></div>
-            <div class="absolute top-[45%] right-[15%] w-1 h-1 rounded-full bg-[#F8E5B0] opacity-60 star-twinkle" style="animation-delay:0.9s"></div>
+    /* —— 鼠标悬停时：纸角被掀起更大 —— */
+    .page-corner:hover {
+      animation: cornerWaveHover 1.5s ease-in-out infinite;
+    }
+    @keyframes cornerWaveHover {
+      0%, 100% { transform: rotate(0deg) translate(0, 0) scale(1.05); }
+      50% { transform: rotate(2.5deg) translate(-3px, -5px) scale(1.1); }
+    }
 
-            <!-- 主体图片 — 不加圆角，与氛围融为一体 -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <img src="assets/luobu-8e7f83f3-813a-4ed8-a002-18cc7802988a.jpg"
-                   alt="深夜敲代码的小萝卜"
-                   class="relative w-[88%] h-[88%] object-cover"
-                   style="mask-image: radial-gradient(ellipse 75% 80% at center, #000 50%, transparent 95%);
-                          -webkit-mask-image: radial-gradient(ellipse 75% 80% at center, #000 50%, transparent 95%);">
-            </div>
+    /* —— 纸角下方的小投影（地面阴影）—— */
+    .page-corner::before {
+      filter: drop-shadow(-2px -2px 3px rgba(80, 50, 30, 0.15));
+    }
 
-            <!-- 氛围叠加光 — 从图片中心散出的微光 -->
-            <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 55% 55%, rgba(248,229,176,0.06) 0%, transparent 35%);"></div>
+    /* ═══════════════════════════════════════════ */
+    /*  PAGE BACK TAB · 翻回（嵌入页面内的小标签） */
+    /* ═══════════════════════════════════════════ */
+    .page-back-tab {
+      position: absolute;
+      top: 1.5rem;
+      right: 3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem 0.4rem 0.6rem;
+      cursor: pointer;
+      z-index: 12;
+      color: var(--ink-fade);
+      font-family: 'Caveat', cursive;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--rule);
+      border-radius: 20px 2px 2px 20px;
+      box-shadow: 2px 2px 6px rgba(80, 50, 30, 0.08);
+      transition: all 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .page-back-tab.is-visible {
+      opacity: 0.75;
+      pointer-events: auto;
+    }
+    .page-back-tab__arrow {
+      display: inline-block;
+      font-size: 1rem;
+      color: var(--warm-deep);
+      transition: transform 0.3s ease;
+    }
+    .page-back-tab:hover {
+      opacity: 1;
+      color: var(--warm-deep);
+      background: rgba(255, 255, 255, 0.7);
+      transform: translateX(-3px);
+      box-shadow: 3px 4px 10px rgba(80, 50, 30, 0.12);
+    }
+    .page-back-tab:hover .page-back-tab__arrow {
+      transform: translateX(-3px);
+    }
+    /* 文字不可选中 */
+    .page-back-tab,
+    .page-back-tab__arrow,
+    .page-back-tab__text {
+      user-select: none;
+      -webkit-user-select: none;
+    }
 
-            <!-- 顶部"深夜"小标签 -->
-            <div class="absolute top-4 left-6 flex items-center gap-2 text-[10px] tracking-[0.2em] text-[#F8E5B0]/60 font-inter uppercase">
-              <span class="w-1 h-1 rounded-full bg-[#F8E5B0]/60 animate-pulse"></span>
-              late night mode
-            </div>
+    /* ═══════════════════════════════════════════ */
+    /*  ABOUT 内容                                */
+    /* ═══════════════════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 1.3fr 1fr; gap: 2.5rem; }
+    }
+    .about-text {
+      max-height: 50vh;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+    .about-lead {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ink);
+      margin: 0 0 1rem;
+    }
+    .about-text p {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+    .about-text em {
+      font-style: italic;
+      color: var(--warm-deep);
+      font-family: 'EB Garamond', serif;
+    }
+    .about-sign {
+      display: flex !important;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      margin-top: 1.5rem !important;
+    }
+    .about-sign-line {
+      display: block;
+      width: 50px;
+      height: 1px;
+      background: var(--warm);
+      opacity: 0.4;
+    }
+    .about-sign-name {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+    .about-sign-date {
+      font-family: 'Caveat', cursive;
+      color: var(--ink-fade);
+      font-size: 0.9rem;
+    }
 
-            <!-- 装饰小月亮（与图片内月亮呼应） -->
-            <div class="absolute top-[8%] right-[8%] w-6 h-6 rounded-full bg-[#F8E5B0]/20 flex items-center justify-center">
-              <div class="w-4 h-4 rounded-full bg-[#F8E5B0]"></div>
-            </div>
-          </div>
+    .about-frame {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .about-frame__window {
+      position: relative;
+      width: 220px;
+      padding: 10px 10px 18px;
+      background: var(--paper-warm);
+      box-shadow:
+        0 1px 0 rgba(0,0,0,0.04),
+        0 4px 12px rgba(80, 50, 30, 0.10),
+        0 16px 32px rgba(80, 50, 30, 0.06);
+      transform: rotate(1.5deg);
+    }
+    .about-frame__window::before,
+    .about-frame__window::after {
+      content: "";
+      position: absolute;
+      width: 48px; height: 14px;
+      background: rgba(255, 235, 180, 0.55);
+      border: 1px solid rgba(184, 119, 46, 0.2);
+    }
+    .about-frame__window::before { top: -8px; left: 20px; transform: rotate(-6deg); }
+    .about-frame__window::after  { top: -6px;  right: 24px; transform: rotate(4deg); }
 
-          <!-- 状态标签条 — 嵌在画框下方 -->
-          <div class="flex flex-wrap justify-end gap-2 mt-5 px-2">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/70 rounded-full border border-deepSky/25 text-xs text-textDark">
-              <span class="w-1.5 h-1.5 rounded-full bg-deepSky animate-pulse"></span>
-              正在学习
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/70 rounded-full border border-grassGreen/30 text-xs text-textDark">
-              <span class="w-1.5 h-1.5 rounded-full bg-grassGreen"></span>
-              寻找机会
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/70 rounded-full border border-warmBrown/30 text-xs text-textDark">
-              <span class="w-1.5 h-1.5 rounded-full bg-warmBrown"></span>
-              开放合作
-            </span>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
+    .about-frame__img {
+      position: relative;
+      width: 200px; height: 200px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #06112a 0%, #0a1a3a 60%, #102247 100%);
+    }
+    .about-frame__img img {
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      mask-image: radial-gradient(ellipse 80% 80% at center, black 60%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at center, black 60%, transparent 100%);
+    }
+    .about-frame__stars {
+      position: absolute;
+      inset: 10px 10px 14px 10px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      width: 2px; height: 2px;
+      border-radius: 50%;
+      background: #F8E5B0;
+      opacity: 0.7;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+    .star--bright { width: 3px; height: 3px; opacity: 0.9; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 0.9; transform: scale(1.2); }
+    }
+    .about-frame__caption {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      color: var(--ink-fade);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
 
-  <!-- Footer -->
-  <footer class="relative bg-cream overflow-hidden pt-12 pb-8">
-    <div class="absolute bottom-0 left-0 w-full" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" class="w-full" style="height:80px">
-        <path d="M0,60 C60,40 120,70 180,50 C240,30 300,65 360,45 C420,25 480,60 540,40 C600,20 660,55 720,35 C780,15 840,50 900,30 C960,10 1020,45 1080,25 C1140,5 1200,40 1260,20 C1320,0 1380,30 1440,15 L1440,100 L0,100 Z" fill="#8FB996" opacity=".10"/>
-        <path d="M0,75 C100,55 200,85 300,65 C400,45 500,80 600,60 C700,40 800,75 900,55 C1000,35 1100,70 1200,50 C1300,30 1400,60 1440,45 L1440,100 L0,100 Z" fill="#B5D8B0" opacity=".08"/>
-      </svg>
-    </div>
-    <svg class="absolute bottom-8 left-[10%] animate-float-slow hidden md:block" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" fill="#F2D7D5" opacity=".6"/><circle cx="5" cy="8" r="3" fill="#F2D7D5" opacity=".5"/><circle cx="11" cy="8" r="3" fill="#F2D7D5" opacity=".5"/><circle cx="8" cy="8" r="2" fill="#C4A882" opacity=".6"/></svg>
-    <svg class="absolute bottom-12 right-[15%] animate-float hidden md:block" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5" r="3" fill="#B5D8B0" opacity=".5"/><circle cx="5" cy="8" r="3" fill="#B5D8B0" opacity=".4"/><circle cx="11" cy="8" r="3" fill="#B5D8B0" opacity=".4"/><circle cx="8" cy="8" r="2" fill="#8FB996" opacity=".5"/></svg>
+    .about-skills { margin-top: 1.25rem; }
+    .about-skills__rule {
+      width: 30px; height: 1px;
+      background: var(--rule);
+      margin: 0.5rem 0 0.75rem;
+    }
+    .tag-row {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.65rem;
+      border: 1px solid var(--rule);
+      color: var(--ink-soft);
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.78rem;
+      background: rgba(255, 255, 255, 0.4);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .tag:hover {
+      border-color: var(--warm);
+      color: var(--warm-deep);
+      background: rgba(184, 119, 46, 0.05);
+    }
 
-    <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <div class="flex flex-col items-center mb-8">
-        <div class="flex items-center gap-2 mb-4">
-          <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M6 12C3.2 12 1 9.8 1 7s2.2-5 5-5c.4 0 .7.1 1.1.2C7.8 1.2 8.3.5 9 .2c1-.5 2.2-.2 3 .5 1.2-1.1 2.8-1.6 4.4-1.3 2.3.4 4 2.4 4 4.8 0 .2 0 .3-.1.5 1.4.6 2.2 2 2 3.5-.2 1.6-1.4 2.8-3 2.8H6z" fill="#8FB996"/></svg>
-          <span class="font-display text-lg text-textDark">Ray3417</span>
-        </div>
-        <p class="text-sm text-textLight font-serif mb-2">网页正在建设中</p>
-      </div>
-      <div class="divider-line mb-6"></div>
-      <p class="text-center text-xs text-textFaint font-serif">Ray3417 &copy; 2025 &middot; Built with care and a lot of sunshine</p>
-    </div>
-  </footer>
+    .works-placeholder {
+      font-family: 'Caveat', cursive;
+      color: var(--ink-fade);
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
 
-  <!-- Back to top -->
-  <button id="backTop" class="back-top fixed bottom-8 right-8 w-11 h-11 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-morandi/20 flex items-center justify-center z-40 transition-colors" aria-label="回到顶部">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 12V4M4 7L8 3L12 7" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round"/></svg>
-  </button>
+    /* ═══════════════════════════════════════════ */
+    /*  火漆印                                    */
+    /* ═══════════════════════════════════════════ */
+    .wax-seal-wrap {
+      position: absolute;
+      bottom: 60px;
+      right: 70px;
+      z-index: 5;
+      width: 105px;
+      height: 106px;
+      cursor: pointer;
+      filter: drop-shadow(0 1px 0 rgba(139,46,37,0.3))
+              drop-shadow(0 4px 6px rgba(80,20,15,0.25))
+              drop-shadow(0 12px 24px rgba(80,20,15,0.18));
+      transition: transform 0.4s ease;
+    }
+    .wax-seal-wrap:hover { transform: translateY(-2px); }
+    .wax-seal__imprint {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at center,
+        rgba(139, 46, 37, 0.07) 0%,
+        rgba(139, 46, 37, 0.03) 40%,
+        transparent 70%
+      );
+      transform: rotate(-5deg) scale(1.06);
+      pointer-events: none;
+    }
+    .wax-seal {
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      transform: rotate(-5deg);
+      mix-blend-mode: multiply;
+      animation: waxDrop 1.8s ease-out 1s both;
+    }
+    @keyframes waxDrop {
+      0%   { opacity: 0; transform: rotate(-5deg) translateY(-18px) scale(0.6); }
+      50%  { opacity: 0.95; transform: rotate(-5deg) translateY(4px) scale(1.05); }
+      75%  { transform: rotate(-5deg) translateY(-2px) scale(0.99); }
+      100% { opacity: 1; transform: rotate(-5deg) translateY(0) scale(1); }
+    }
+    @media (max-width: 640px) {
+      .wax-seal-wrap { width: 76px; height: 77px; bottom: 50px; right: 50px; }
+    }
+
+    /* —— 按钮（文字按钮）—— */
+    .btn-text {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.3rem;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--rule);
+      transition: all 0.4s ease;
+      letter-spacing: 0.05em;
+    }
+    .btn-text:hover {
+      border-color: var(--warm);
+      color: var(--warm-deep);
+    }
+    .btn-text-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .btn-text-primary:hover {
+      background: var(--warm-deep);
+      border-color: var(--warm-deep);
+      color: var(--paper);
+    }
+
+    /* —— 印章 —— */
+    .stamp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.85rem;
+      border: 1.5px solid var(--stamp);
+      border-radius: 50%;
+      color: var(--stamp);
+      font-family: 'Caveat', cursive;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      transform: rotate(-6deg);
+      opacity: 0.75;
+      line-height: 1;
+    }
+    .stamp-anim {
+      animation: stampDrop 1.2s ease-out 0.6s both;
+    }
+    @keyframes stampDrop {
+      0%   { opacity: 0; transform: rotate(-6deg) scale(1.4); }
+      60%  { opacity: 0.85; transform: rotate(-6deg) scale(0.95); }
+      100% { opacity: 0.75; transform: rotate(-6deg) scale(1); }
+    }
+
+    .date-hand {
+      font-family: 'Caveat', cursive;
+      color: var(--gold);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: var(--warm);
+      margin: 0;
+    }
+
+    .corner-mark {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: var(--rule);
+    }
+    .corner-mark--tl { top: 16px; left: 16px; border-top: 1px solid; border-left: 1px solid; }
+    .corner-mark--tr { top: 16px; right: 16px; border-top: 1px solid; border-right: 1px solid; }
+    .corner-mark--bl { bottom: 16px; left: 16px; border-bottom: 1px solid; border-left: 1px solid; }
+    .corner-mark--br { bottom: 16px; right: 16px; border-bottom: 1px solid; border-right: 1px solid; }
+
+    .ink-line {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--warm);
+      transform-origin: left center;
+      animation: inkLine 1.2s ease-out 0.8s both;
+    }
+    @keyframes inkLine {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+  </style>
 
   <script>
-    // 合并滚动相关监听（单次 scroll handler 胜过多次）
-    const navbar = document.getElementById('navbar');
-    const backTop = document.getElementById('backTop');
-    let ticking = false;
+    /* ═══════════════════════════════════════════ */
+    /*  翻页系统（参考示例的双面 + z-index 方案） */
+    /* ═══════════════════════════════════════════ */
+    class Book {
+      constructor(containerId) {
+        this.container = document.getElementById(containerId);
+        this.pages = Array.from(this.container.querySelectorAll('.page'));
+        this.totalPages = this.pages.length;
+        this.currentPage = 0; // 当前正在显示的页面索引（0 表示第一页在最上面）
+        this.isAnimating = false;
 
-    function onScroll() {
-      const y = window.scrollY;
-      navbar.classList.toggle('scrolled', y > 50);
-      backTop.classList.toggle('show', y > 500);
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(onScroll);
-        ticking = true;
+        this.init();
       }
-    }, { passive: true });
 
-    // Scroll reveal — 阶梯式延迟
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObs = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          setTimeout(() => el.classList.add('visible'), (el.dataset.delay || i * 60));
-          revealObs.unobserve(el);
+      init() {
+        // 初始化 z-index：第一页最高
+        for (let i = 0; i < this.pages.length; i++) {
+          this.pages[i].style.zIndex = this.pages.length - i;
         }
+        this.updateNav();
+      }
+
+      flipTo(targetIndex) {
+        if (this.isAnimating) return;
+        if (targetIndex < 0 || targetIndex >= this.totalPages) return;
+        if (targetIndex === this.currentPage) return;
+
+        this.isAnimating = true;
+
+        // 立即隐藏所有返回标签
+        this.pages.forEach(p => {
+          const tab = p.querySelector('.page-back-tab');
+          if (tab) tab.classList.remove('is-visible');
+        });
+
+        const direction = targetIndex > this.currentPage ? 'forward' : 'backward';
+
+        if (direction === 'forward') {
+          const pageToFlip = this.pages[this.currentPage];
+          pageToFlip.classList.add('is-flipping-forward', 'is-flipped');
+
+          setTimeout(() => {
+            pageToFlip.classList.remove('is-flipping-forward');
+            for (let i = 0; i <= this.currentPage; i++) {
+              this.pages[i].style.zIndex = 1;
+            }
+            for (let i = this.currentPage + 1; i < this.totalPages; i++) {
+              this.pages[i].style.zIndex = this.totalPages - i + 10;
+            }
+            this.currentPage = targetIndex;
+            this.isAnimating = false;
+            this.updateNav();
+            // 立即显示当前页的返回标签
+            const newPage = this.pages[this.currentPage];
+            const newTab = newPage.querySelector('.page-back-tab');
+            if (newTab) newTab.classList.add('is-visible');
+          }, 800);
+        } else {
+          // 向回翻：先把目标页调到最上层，再移除 is-flipped，添加翻回动画
+          const pageToUnflip = this.pages[targetIndex];
+          pageToUnflip.style.zIndex = this.totalPages + 10;
+          pageToUnflip.classList.remove('is-flipped');
+          pageToUnflip.classList.add('is-flipping-backward');
+
+          setTimeout(() => {
+            pageToUnflip.classList.remove('is-flipping-backward');
+            for (let i = 0; i <= targetIndex; i++) {
+              this.pages[i].style.zIndex = this.totalPages - i;
+            }
+            for (let i = targetIndex + 1; i < this.totalPages; i++) {
+              this.pages[i].style.zIndex = this.totalPages - i;
+            }
+            this.currentPage = targetIndex;
+            this.isAnimating = false;
+            this.updateNav();
+            const newPage = this.pages[this.currentPage];
+            const newTab = newPage.querySelector('.page-back-tab');
+            if (newTab) newTab.classList.add('is-visible');
+          }, 800);
+        }
+      }
+
+      nextPage() {
+        this.flipTo(this.currentPage + 1);
+      }
+
+      prevPage() {
+        this.flipTo(this.currentPage - 1);
+      }
+
+      updateNav() {
+        document.querySelectorAll('.nav-link').forEach(link => {
+          const idx = parseInt(link.dataset.page, 10);
+          link.classList.toggle('is-active', idx === this.currentPage);
+        });
+      }
+    }
+
+    let book;
+    document.addEventListener('DOMContentLoaded', () => {
+      book = new Book('book-container');
+
+      // 绑定翻页触发（按钮、纸角、火漆印）
+      document.querySelectorAll('[data-go]').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          e.stopPropagation();
+          const target = parseInt(el.dataset.go, 10);
+          if (!isNaN(target)) book.flipTo(target);
+        });
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    revealEls.forEach(el => revealObs.observe(el));
 
-    // 移动端菜单
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    function closeMenu() { mobileMenu.classList.add('hidden'); }
+      // 导航直接翻页
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const target = parseInt(link.dataset.page, 10);
+          if (!isNaN(target)) book.flipTo(target);
+        });
+      });
 
-    // Cursor glow（桌面端）
-    const glow = document.getElementById('cursorGlow');
-    let glowX = 0, glowY = 0, mouseX = 0, mouseY = 0;
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    }, { passive: true });
-    function animateGlow() {
-      glowX += (mouseX - glowX) * 0.15;
-      glowY += (mouseY - glowY) * 0.15;
-      glow.style.left = glowX + 'px';
-      glow.style.top = glowY + 'px';
-      requestAnimationFrame(animateGlow);
-    }
-    if (window.matchMedia('(min-width: 768px)').matches) {
-      animateGlow();
-    }
+      // logo 回到扉页
+      document.querySelector('.nav-logo').addEventListener('click', e => {
+        e.preventDefault();
+        book.flipTo(0);
+      });
+    });
   </script>
 </body>
 </html>
