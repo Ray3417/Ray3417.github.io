@@ -5,9 +5,7 @@
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
     "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
-    "build": "npm run build:css",
-    "serve": "node _serve.js",
-    "start": "npm run build:css && node _serve.js"
+    "build": "npm run build:css"
   },
   "repository": {
     "type": "git",
@@ -22,10 +20,6 @@
   },
   "homepage": "https://github.com/Ray3417/Ray3417.github.io#readme",
   "devDependencies": {
-    "sharp": "^0.35.2",
     "tailwindcss": "^3.4.17"
-  },
-  "dependencies": {
-    "playwright": "^1.61.0"
   }
 }
