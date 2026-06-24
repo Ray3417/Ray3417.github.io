@@ -25,7 +25,7 @@
       <div class="nav-links">
         <a href="#" class="nav-link" data-page="0">扉页</a>
         <a href="#" class="nav-link" data-page="1">关于</a>
-        <a href="#" class="nav-link" data-page="2">纸笺</a>
+        <a href="#" class="nav-link" data-page="2">成果</a>
         <a href="#" class="nav-link" data-page="3">寄信</a>
       </div>
     </div>
@@ -60,7 +60,7 @@
           </div>
           <div class="page__actions">
             <a href="#" class="btn-text btn-text-primary" data-go="1">进来坐坐</a>
-            <a href="#" class="btn-text" data-go="2">翻翻纸笺</a>
+            <a href="#" class="btn-text" data-go="2">翻翻成果</a>
           </div>
           <div class="page__foot">
             <p class="page__note">※ 这一页只是扉页，正文尚未落笔。</p>
@@ -83,7 +83,7 @@
         <div class="wax-seal-wrap" data-go="1" aria-label="揭开火漆印，翻到下一页">
           <div class="wax-seal__imprint"></div>
           <img
-            src="assets/sealing_wax.png"
+            src="assets/sealing-wax.webp"
             alt=""
             class="wax-seal"
             width="105"
@@ -187,35 +187,182 @@
           <span class="page-back-tab__arrow">←</span>
           <span class="page-back-tab__text">back to cover</span>
         </div>
-        <div class="page-corner page-corner--right" data-go="2" aria-label="翻到纸笺"></div>
+        <div class="page-corner page-corner--right" data-go="2" aria-label="翻到成果"></div>
       </div>
     </div>
 
-    <!-- ==========  PAGE 2 · 纸笺（占位）========== -->
+    <!-- ==========  PAGE 2 · 成果（含论文子页）========== -->
     <div class="page page--works" id="page-2" data-name="works">
       <div class="page-front page-front--paper">
         <div class="page__inner">
-          <div class="page__head">
-            <span class="date-hand">chapter two — 纸笺</span>
-            <span class="stamp">page · 03</span>
+
+          <!-- ═══ 子页容器 ═══ -->
+          <div class="pub-subpage is-active" data-subpage="list">
+
+            <div class="page__head">
+              <span class="date-hand">chapter two — 成果</span>
+              <span class="stamp">page · 03</span>
+            </div>
+            <h2 class="page__h2">成果<br><span class="page__h2-en">publications</span></h2>
+            <div class="page__rule"></div>
+
+            <div class="pub-list">
+              <a href="#" class="pub-card" data-paper="lrdnet">
+                <div class="pub-card__number">01</div>
+                <div class="pub-card__body">
+                  <h3 class="pub-card__title">Long-range Diffusion for Weakly Camouflaged Object Segmentation</h3>
+                  <p class="pub-card__meta">
+                    <span class="pub-card__journal">Neural Networks</span>
+                    <span class="pub-card__sep">·</span>
+                    <span>2025</span>
+                  </p>
+                  <p class="pub-card__authors">Rui Wang, Caijuan Shi, Weixiang Gao, Changyu Duan, Ao Cai, Fei Yu, Yunchao Wei</p>
+                  <div class="pub-card__tags">
+                    <span class="tag tag--sm">Camouflaged Object Segmentation</span>
+                    <span class="tag tag--sm">Weakly Supervised</span>
+                    <span class="tag tag--sm">Diffusion</span>
+                  </div>
+                </div>
+                <span class="pub-card__arrow">→</span>
+              </a>
+
+              <a href="#" class="pub-card" data-paper="pgt">
+                <div class="pub-card__number">02</div>
+                <div class="pub-card__body">
+                  <h3 class="pub-card__title">Camouflaged Object Segmentation with Prior via Two-stage Training</h3>
+                  <p class="pub-card__meta">
+                    <span class="pub-card__journal">Computer Vision and Image Understanding</span>
+                    <span class="pub-card__sep">·</span>
+                    <span>2024</span>
+                  </p>
+                  <p class="pub-card__authors">Rui Wang, Caijuan Shi, Changyu Duan, Weixiang Gao, Hongli Zhu, Yunchao Wei, Meiqin Liu</p>
+                  <div class="pub-card__tags">
+                    <span class="tag tag--sm">Camouflaged Object Segmentation</span>
+                    <span class="tag tag--sm">Transformer</span>
+                    <span class="tag tag--sm">Prior Information</span>
+                  </div>
+                </div>
+                <span class="pub-card__arrow">→</span>
+              </a>
+            </div>
+
           </div>
-          <h2 class="page__h2">纸笺<br><span class="page__h2-en">papers &amp; notes</span></h2>
-          <div class="page__rule"></div>
-          <p class="works-placeholder">这一页尚未落笔，敬请期待。</p>
+
+          <!-- ═══ 子页：LRDNet ═══ -->
+          <div class="pub-subpage" data-subpage="lrdnet">
+            <div class="page__head">
+              <span class="date-hand">paper one — Neural Networks 2025</span>
+              <span class="stamp">paper · 01</span>
+            </div>
+
+            <h2 class="page__h2">LRDNet<br><span class="page__h2-en">long-range diffusion network</span></h2>
+            <div class="page__rule"></div>
+
+            <div class="pub-detail">
+              <div class="pub-detail__text">
+                <h3 class="pub-detail__title">Long-range Diffusion for Weakly Camouflaged Object Segmentation</h3>
+                <p class="pub-detail__meta">
+                  <span class="pub-detail__journal">Neural Networks</span>, vol. 192, pp. 107915, 2025
+                </p>
+                <p class="pub-detail__authors">
+                  Rui Wang, Caijuan Shi, Weixiang Gao, Changyu Duan, Ao Cai, Fei Yu, Yunchao Wei
+                </p>
+                <p class="pub-detail__section-label">abstract</p>
+                <p class="pub-detail__abstract">
+                  Weakly supervised camouflaged object segmentation (WSCOS) aims to segment objects well embedded in surroundings via the supervision of sparse annotations. This paper proposes the long-range diffusion network (LRDNet) to diffuse the sparse annotations for improving WSCOS performance. A novel gated local saliency coherence (GLSC) loss is designed to efficiently diffuse limited annotation information across the entire image. Additionally, the Trans-decorator and the restoration upsampling (RUp) are designed to capture sufficient long-range dependencies.
+                </p>
+                <p class="pub-detail__section-label">keywords</p>
+                <div class="pub-detail__tags">
+                  <span class="tag tag--sm">Camouflaged Object Segmentation</span>
+                  <span class="tag tag--sm">Weakly Supervised Learning</span>
+                  <span class="tag tag--sm">Transformer</span>
+                  <span class="tag tag--sm">Diffusion</span>
+                </div>
+                <div class="pub-detail__links">
+                  <a href="https://doi.org/10.1016/j.neunet.2025.107915" target="_blank" rel="noopener" class="pub-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <span>DOI</span>
+                  </a>
+                  <a href="https://github.com/Ray3417/LRDNet" target="_blank" rel="noopener" class="pub-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    <span>Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pub-detail__img-col">
+                <div class="pub-detail__img-frame">
+                  <div class="pub-detail__img-placeholder">
+                    <span>figure</span>
+                  </div>
+                  <p class="pub-detail__img-caption">pipeline overview</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ 子页：PGT ═══ -->
+          <div class="pub-subpage" data-subpage="pgt">
+            <div class="page__head">
+              <span class="date-hand">paper two — CVIU 2024</span>
+              <span class="stamp">paper · 02</span>
+            </div>
+
+            <h2 class="page__h2">PGT<br><span class="page__h2-en">prior-guided transformer</span></h2>
+            <div class="page__rule"></div>
+
+            <div class="pub-detail">
+              <div class="pub-detail__text">
+                <h3 class="pub-detail__title">Camouflaged Object Segmentation with Prior via Two-stage Training</h3>
+                <p class="pub-detail__meta">
+                  <span class="pub-detail__journal">Computer Vision and Image Understanding</span>, vol. 246, pp. 104061, 2024
+                </p>
+                <p class="pub-detail__authors">
+                  Rui Wang, Caijuan Shi, Changyu Duan, Weixiang Gao, Hongli Zhu, Yunchao Wei, Meiqin Liu
+                </p>
+                <p class="pub-detail__section-label">abstract</p>
+                <p class="pub-detail__abstract">
+                  The camouflaged object segmentation (COS) task aims to segment objects visually embedded within the background. This paper proposes a prior-guided transformer (PGT) for prior generation and guidance. A prior generation subnetwork consisting of a Transformer backbone and simple convolutions obtains higher-quality priors. A novel two-stage training method achieves the backbone's deep supervision. The prior guidance modules (PGM) with distinct space token mixers capture global dependencies of location priors and local details of boundary priors.
+                </p>
+                <p class="pub-detail__section-label">keywords</p>
+                <div class="pub-detail__tags">
+                  <span class="tag tag--sm">Camouflaged Object Segmentation</span>
+                  <span class="tag tag--sm">Transformer</span>
+                  <span class="tag tag--sm">Prior Information</span>
+                  <span class="tag tag--sm">Two-stage Training</span>
+                </div>
+                <div class="pub-detail__links">
+                  <a href="https://doi.org/10.1016/j.cviu.2024.104061" target="_blank" rel="noopener" class="pub-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <span>DOI</span>
+                  </a>
+                  <a href="https://github.com/Ray3417/PGT" target="_blank" rel="noopener" class="pub-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    <span>Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pub-detail__img-col">
+                <div class="pub-detail__img-frame">
+                  <div class="pub-detail__img-placeholder">
+                    <span>figure</span>
+                  </div>
+                  <p class="pub-detail__img-caption">framework diagram</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
         <span class="corner-mark corner-mark--tl"></span>
         <span class="corner-mark corner-mark--tr"></span>
         <span class="corner-mark corner-mark--bl"></span>
         <span class="corner-mark corner-mark--br"></span>
-
-        <!-- 金属圆环装订孔 -->
         <div class="page-ring page-ring--1"></div>
         <div class="page-ring page-ring--2"></div>
         <div class="page-ring page-ring--3"></div>
         <div class="page-ring page-ring--4"></div>
         <div class="page-ring page-ring--5"></div>
-
-        <div class="page-back-tab" data-go="1" aria-label="翻回关于">
+        <div class="page-back-tab" data-subpage-root data-subpage-go="1" data-list-text="back to about" aria-label="翻回关于">
           <span class="page-back-tab__arrow">←</span>
           <span class="page-back-tab__text">back to about</span>
         </div>
@@ -233,7 +380,22 @@
           </div>
           <h2 class="page__h2">寄信<br><span class="page__h2-en">drop a line</span></h2>
           <div class="page__rule"></div>
-          <p class="works-placeholder">联系方式：GitHub @Ray3417</p>
+          <p class="works-placeholder" style="font-size:1rem;line-height:2.2">
+            <span style="display:flex;align-items:center;gap:0.6rem">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--warm)" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+              <span>ray_wr@qq.com</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:0.6rem;margin-top:0.6rem">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--warm)">
+                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>.388429 0-137.223731 111.975533-247.497732 249.424319-247.497732 119.184383 0 219.866737 83.615565 241.608157 196.357231C705.607432 387.91476 603.596837 444.750105 499.138193 453.157712 498.720972 453.182273 498.303751 453.22103 497.896691 453.253838 483.139579 453.822543 468.382467 455.572085 453.641115 458.610401c-37.698311 6.084702-74.156277 18.031896-108.485969 35.56783-16.961576 8.56806-27.055277 27.794995-23.443425 46.829581 3.611852 19.035623 20.656343 33.062513 39.877162 32.993634 1.752015 3.836347 3.519768 7.676787 5.269777 11.543766C420.022317 605.506195 419.854952 637.510655 413.433057 664.930031L413.433057 664.930031z"/>
+              </svg>
+              <span>ray25425</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:0.6rem;margin-top:0.6rem">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--warm)" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>github.com/Ray3417</span>
+            </span>
+          </p>
         </div>
         <span class="corner-mark corner-mark--tl"></span>
         <span class="corner-mark corner-mark--tr"></span>
@@ -247,9 +409,9 @@
         <div class="page-ring page-ring--4"></div>
         <div class="page-ring page-ring--5"></div>
 
-        <div class="page-back-tab" data-go="2" aria-label="翻回纸笺">
+        <div class="page-back-tab" data-go="2" aria-label="翻回成果">
           <span class="page-back-tab__arrow">←</span>
-          <span class="page-back-tab__text">back to papers</span>
+          <span class="page-back-tab__text">back to publications</span>
         </div>
       </div>
     </div>
@@ -828,6 +990,264 @@
       font-size: 0.9rem;
     }
 
+    /* ═══════════════════════════════════════════ */
+    /*  PUBLICATIONS · 成果列表                    */
+    /* ═══════════════════════════════════════════ */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .pub-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.3rem 1.5rem;
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      position: relative;
+    }
+    .pub-card:hover {
+      border-color: var(--warm);
+      box-shadow: 0 4px 16px rgba(80, 50, 30, 0.08);
+      transform: translateY(-2px);
+    }
+    .pub-card__number {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--warm);
+      opacity: 0.45;
+      line-height: 1;
+      min-width: 2rem;
+      padding-top: 0.15rem;
+    }
+    .pub-card__body {
+      flex: 1;
+      min-width: 0;
+    }
+    .pub-card__title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0 0 0.35rem;
+      line-height: 1.35;
+    }
+    .pub-card__meta {
+      font-family: 'Caveat', cursive;
+      font-size: 0.95rem;
+      color: var(--warm-deep);
+      margin: 0 0 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .pub-card__journal {
+      font-weight: 500;
+    }
+    .pub-card__sep {
+      opacity: 0.4;
+    }
+    .pub-card__authors {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.8rem;
+      color: var(--ink-fade);
+      margin: 0 0 0.5rem;
+      line-height: 1.5;
+    }
+    .pub-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .pub-card__arrow {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--warm);
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      padding-top: 0.3rem;
+    }
+    .pub-card:hover .pub-card__arrow {
+      opacity: 0.7;
+      transform: translateX(3px);
+    }
+
+    /* —— tag 小尺寸 —— */
+    .tag--sm {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-color: var(--rule);
+      color: var(--ink-fade);
+    }
+
+    /* ═══════════════════════════════════════════ */
+    /*  PUBLICATION DETAIL · 论文详情               */
+    /* ═══════════════════════════════════════════ */
+    .pub-detail {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 0.25rem;
+    }
+    @media (min-width: 900px) {
+      .pub-detail { grid-template-columns: 1.4fr 1fr; gap: 2rem; }
+    }
+    .pub-detail__text {
+      max-height: 58vh;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+    .pub-detail__text::-webkit-scrollbar { width: 3px; }
+    .pub-detail__text::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
+
+    .pub-detail__title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0 0 0.4rem;
+      line-height: 1.4;
+    }
+    .pub-detail__meta {
+      font-family: 'Caveat', cursive;
+      font-size: 0.95rem;
+      color: var(--warm-deep);
+      margin: 0 0 0.3rem;
+    }
+    .pub-detail__journal {
+      font-weight: 500;
+    }
+    .pub-detail__authors {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.82rem;
+      color: var(--ink-fade);
+      margin: 0 0 1rem;
+      line-height: 1.6;
+    }
+    .pub-detail__section-label {
+      font-family: 'Caveat', cursive;
+      font-size: 0.95rem;
+      color: var(--warm);
+      letter-spacing: 0.08em;
+      margin: 0 0 0.4rem;
+    }
+    .pub-detail__abstract {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin: 0 0 1rem;
+    }
+    .pub-detail__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0 0 1rem;
+    }
+    .pub-detail__links {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.03em;
+    }
+    .pub-link:hover {
+      border-color: var(--warm);
+      color: var(--warm-deep);
+      background: rgba(184, 119, 46, 0.04);
+    }
+    .pub-link svg {
+      flex-shrink: 0;
+    }
+
+    /* —— 插图列 —— */
+    .pub-detail__img-col {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .pub-detail__img-frame {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      padding: 10px 10px 18px;
+      background: var(--paper-warm);
+      box-shadow:
+        0 1px 0 rgba(0,0,0,0.04),
+        0 4px 12px rgba(80, 50, 30, 0.10),
+        0 16px 32px rgba(80, 50, 30, 0.06);
+      transform: rotate(1.2deg);
+    }
+    .pub-detail__img-frame::before,
+    .pub-detail__img-frame::after {
+      content: "";
+      position: absolute;
+      width: 48px; height: 14px;
+      background: rgba(255, 235, 180, 0.55);
+      border: 1px solid rgba(184, 119, 46, 0.2);
+    }
+    .pub-detail__img-frame::before { top: -8px; left: 20px; transform: rotate(-6deg); }
+    .pub-detail__img-frame::after  { top: -6px; right: 24px; transform: rotate(4deg); }
+    .pub-detail__img-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #f5efe3 0%, #ede4d3 100%);
+      border: 1px dashed var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pub-detail__img-placeholder span {
+      font-family: 'Caveat', cursive;
+      color: var(--ink-fade);
+      font-size: 1rem;
+      opacity: 0.5;
+    }
+    .pub-detail__img-caption {
+      font-family: 'Caveat', cursive;
+      color: var(--ink-fade);
+      font-size: 0.85rem;
+      text-align: center;
+      margin: 0.6rem 0 0;
+    }
+
+    /* ═══════════════════════════════════════════ */
+    /*  SUB-PAGE · 论文子页切换                      */
+    /* ═══════════════════════════════════════════ */
+    .pub-subpage {
+      display: none;
+      width: 100%;
+    }
+    .pub-subpage.is-active {
+      display: block;
+      animation: subpageIn 0.3s ease-out;
+    }
+    @keyframes subpageIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .about-frame {
       display: flex;
       justify-content: center;
@@ -1113,15 +1533,19 @@
 
         if (direction === 'forward') {
           const pageToFlip = this.pages[this.currentPage];
+          for (let i = this.currentPage + 1; i < targetIndex; i++) {
+            this.pages[i].style.zIndex = -1;
+          }
           pageToFlip.classList.add('is-flipping-forward', 'is-flipped');
 
           setTimeout(() => {
             pageToFlip.classList.remove('is-flipping-forward');
-            for (let i = 0; i <= this.currentPage; i++) {
+            for (let i = 0; i < targetIndex; i++) {
               this.pages[i].style.zIndex = 1;
             }
-            for (let i = this.currentPage + 1; i < this.totalPages; i++) {
-              this.pages[i].style.zIndex = this.totalPages - i + 10;
+            this.pages[targetIndex].style.zIndex = this.totalPages + 10;
+            for (let i = targetIndex + 1; i < this.totalPages; i++) {
+              this.pages[i].style.zIndex = this.totalPages - i;
             }
             this.currentPage = targetIndex;
             this.isAnimating = false;
@@ -1134,15 +1558,16 @@
         } else {
           // 向回翻：先把目标页调到最上层，再移除 is-flipped，添加翻回动画
           const pageToUnflip = this.pages[targetIndex];
-          pageToUnflip.style.zIndex = this.totalPages + 10;
+          pageToUnflip.style.zIndex = this.totalPages + 20;
           pageToUnflip.classList.remove('is-flipped');
           pageToUnflip.classList.add('is-flipping-backward');
 
           setTimeout(() => {
             pageToUnflip.classList.remove('is-flipping-backward');
-            for (let i = 0; i <= targetIndex; i++) {
-              this.pages[i].style.zIndex = this.totalPages - i;
+            for (let i = 0; i < targetIndex; i++) {
+              this.pages[i].style.zIndex = 1;
             }
+            this.pages[targetIndex].style.zIndex = this.totalPages + 10;
             for (let i = targetIndex + 1; i < this.totalPages; i++) {
               this.pages[i].style.zIndex = this.totalPages - i;
             }
@@ -1199,6 +1624,51 @@
       document.querySelector('.nav-logo').addEventListener('click', e => {
         e.preventDefault();
         book.flipTo(0);
+      });
+
+      // 子页切换（通用：支持多组子页组）
+      // 有 data-subpage-root 的 back-tab 自行处理点击，不依赖 data-go
+      document.querySelectorAll('.page-back-tab[data-subpage-root]').forEach(tab => {
+        tab.addEventListener('click', e => {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          const page = tab.closest('.page');
+          const activeSub = page.querySelector('.pub-subpage.is-active:not([data-subpage="list"])');
+          if (activeSub) {
+            page.querySelectorAll('.pub-subpage').forEach(sp => sp.classList.remove('is-active'));
+            page.querySelector('[data-subpage="list"]').classList.add('is-active');
+            const corner = page.querySelector('.page-corner');
+            if (corner) corner.style.display = '';
+          } else {
+            book.flipTo(parseInt(tab.dataset.subpageGo, 10));
+          }
+          tab.querySelector('.page-back-tab__text').textContent = tab.dataset.listText;
+        });
+      });
+      // 论文卡片 → 进入子页
+      document.querySelectorAll('[data-paper]').forEach(card => {
+        card.addEventListener('click', e => {
+          e.preventDefault();
+          const page = card.closest('.page');
+          const paper = card.dataset.paper;
+          page.querySelector('[data-subpage="list"]').classList.remove('is-active');
+          page.querySelector(`[data-subpage="${paper}"]`).classList.add('is-active');
+          const corner = page.querySelector('.page-corner');
+          if (corner) corner.style.display = 'none';
+          const tab = page.querySelector('.page-back-tab[data-subpage-root]');
+          if (tab) tab.querySelector('.page-back-tab__text').textContent = 'back to publications';
+        });
+      });
+
+      // 键盘翻页：← 上一页，→ 下一页
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          book.nextPage();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          book.prevPage();
+        }
       });
     });
   </script>
